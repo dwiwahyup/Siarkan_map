@@ -2,24 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Rules;
 use Illuminate\Http\Request;
 
 class FuzzyController extends Controller
 {
-    public function fuzzy($request)
+    public function fuzzy(Request $request)
     {
         // $data = $request->;
-
+        // dd($request->all());
         //request data dari form
-        $a['jam_kecelakaan'] = $request->['jam_kecelakaan'];
-        $b['kepadatan'] = $request->['kepadatan'];
-        $c['intensitas_kecelakaan'] = $request->['intensitas_kecelakaan'];
-        $d['kondisi_korban'] = $request->['kondisi_korban'];
+        $jam_kecelakaan = $request->jam_kecelakaan;
+        $kepadatan = $request->kepadatan;
+        $intensitas_kecelakaan = $request->intensitas_kecelakaan;
+        $kondisi_korban = $request->kondisi_korban;
 
         //menghitung nilai fuzzyfikasi
-
+        $jam_kecelakaanA = $jam_kecelakaanB = $jam_kecelakaanC = $jam_kecelakaanD = 0;
+        $kepadatanA = $kepadatanB = $kepadatanC = 0;
+        $intensitas_kecelakaanA = $intensitas_kecelakaanB = $intensitas_kecelakaanC = 0;
+        $kondisi_korbanA = $kondisi_korbanB = $kondisi_korbanC = 0;
         //Fungsi Keanggotaan
-
+        $kecelakaanRule = $kepadatanRule = $intensitas_kecelakaanRule = $kondisi_korbanRule = '';
         // ----------------------------------Jam Kecelakaan---------------------------------- //
         if ($jam_kecelakaan <= 10) {
             if ($jam_kecelakaan <= 6) {
@@ -29,6 +33,7 @@ class FuzzyController extends Controller
             }elseif ($jam_kecelakaan >= 10) {
                 $jam_kecelakaanA = 0;
             }
+            $kecelakaanRule = 'Dini-Pagi';
         }
 
         if ($jam_kecelakaan >= 10 && $jam_kecelakaan < 15) {
@@ -41,6 +46,7 @@ class FuzzyController extends Controller
             }elseif ($jam_kecelakaan <=10 && $jam_kecelakaan >= 15) {
                 $jam_kecelakaanB = 0;
             }
+            $kecelakaanRule = 'Siang';
         }
 
         if ($jam_kecelakaan >= 15 && $jam_kecelakaan < 19) {
@@ -53,6 +59,7 @@ class FuzzyController extends Controller
             }elseif ($jam_kecelakaan <= 15 && $jam_kecelakaan >= 19) {
                 $jam_kecelakaanC = 0;
             }
+            $kecelakaanRule = 'Sore';
         }
 
         if ($jam_kecelakaan >= 19 && $jam_kecelakaan < 23) {
@@ -63,6 +70,7 @@ class FuzzyController extends Controller
             }elseif ($jam_kecelakaan <= 19) {
                 $jam_kecelakaanD = 0;
             }
+            $kecelakaanRule = 'Malam';
         }
 
         // ----------------------------------Kepadatan ---------------------------------- //
@@ -74,6 +82,7 @@ class FuzzyController extends Controller
             }elseif ($kepadatan >= 7388) {
                 $kepadatanA = 0;
             }
+            $kepadatanRule = 'Tidak Padat';
         }
 
         if ($kepadatan >= 7388 && $kepadatan < 9289) {
@@ -86,6 +95,7 @@ class FuzzyController extends Controller
             }elseif ($kepadatan <= 7388 && $kepadatan >= 9289) {
                 $kepadatanB = 0;
             }
+            $kepadatanRule = 'Ramai';
         }
 
         if ($kepadatan >= 9289 && $kepadatan < 11190) {
@@ -96,6 +106,7 @@ class FuzzyController extends Controller
             }elseif ($kepadatan <= 9289) {
                 $kepadatanC = 0;
             }
+            $kepadatanRule = 'Padat';
         }
 
         // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
@@ -103,11 +114,12 @@ class FuzzyController extends Controller
         if ($intensitas_kecelakaan <=21) {
             if ($intensitas_kecelakaan <= 10) {
                 $intensitas_kecelakaanA = 1;
-            }elseif ($interitas_kecelakaan > 10 && $intensitas_kecelakaan < 21) {
+            }elseif ($intensitas_kecelakaan > 10 && $intensitas_kecelakaan < 21) {
                 $intensitas_kecelakaanA = (21 - $intensitas_kecelakaan) / (21 - 10);
             }elseif ($intensitas_kecelakaan >= 21) {
                 $interitas_kecelakaanA = 0;
             }
+            $intensitas_kecelakaanRule = 'Sangat Jarang';
         }
 
         if ($intensitas_kecelakaan >= 21 && $intensitas_kecelakaan < 42) {
@@ -120,16 +132,19 @@ class FuzzyController extends Controller
             }elseif ($intensitas_kecelakaan <= 21 && $intensitas_kecelakaan >= 42) {
                 $intensitas_kecelakaanB = 0;
             }
+            $intensitas_kecelakaanRule = 'Jarang';
         }
 
-        if ($intensitas_kecelakaan >= 42 && $intensitas_kecelakaan < 64) {
+        if ($intensitas_kecelakaan >= 42 && $intensitas_kecelakaan <= 64) {
             if ($intensitas_kecelakaan >= 42 && $intensitas_kecelakaan < 64) {
                 $intensitas_kecelakaanC = ($intensitas_kecelakaan - 42) / (64 - 42);
+                // dd($intensitas_kecelakaanC);
             }elseif ($intensitas_kecelakaan >= 64) {
                 $intensitas_kecelakaanC = 1;
             }elseif ($intensitas_kecelakaan <= 42) {
                 $intensitas_kecelakaanC = 0;
             }
+            $intensitas_kecelakaanRule = 'Sering';
         }
 
         // ----------------------------------Kondisi Korban ---------------------------------- //
@@ -142,110 +157,123 @@ class FuzzyController extends Controller
             }elseif ($kondisi_korban >= 2) {
                 $kondisi_korbanA = 0;
             }
+            $kondisi_korbanRule = 'Ringan';
         }
 
-        if ($kondisi_korban >= 1 && $kondisi_korban < 3) {
+        if ($kondisi_korban > 1 && $kondisi_korban <=2) {
             if ($kondisi_korban > 1 && $kondisi_korban < 2) {
                 $kondisi_korbanB = ($kondisi_korban - 1) / (2 - 1);
-            }elseif ($konidisi_korban > 2 && $kondisi_korban < 3) {
+            }elseif ($kondisi_korban > 2 && $kondisi_korban < 3) {
                 $kondisi_korbanB = (3 - $kondisi_korban) / (3 - 2);
-            }elseif ($konidisi_korban == 2) {
+            }elseif ($kondisi_korban == 2) {
                 $kondisi_korbanB = 1;
-            }elseif ($konidisi_korban <= 1 && $kondisi_korban >= 3) {
-                $konidisi_korbanB = 0;
+            }elseif ($kondisi_korban <= 1 && $kondisi_korban >= 3) {
+                $kondisi_korbanB = 0;
             }
+            $kondisi_korbanRule = 'Sedang';
         }
 
-        if ($konidisi_korban >=2 && $kondisi_korban < 3) {
-            if ($konidisi_korban >= 2 && $kondisi_korban < 3) {
+        if ($kondisi_korban > 2 && $kondisi_korban <= 3) {
+            if ($kondisi_korban >= 2 && $kondisi_korban < 3) {
                 $kondisi_korbanC = ($kondisi_korban - 2) / (3 - 2);
-            }elseif ($konidisi_korban >= 3) {
+            }elseif ($kondisi_korban >= 3) {
                 $kondisi_korbanC = 1;
-            }elseif ($konidisi_korban <= 2) {
-                $konidisi_korbanC = 0;
+            }elseif ($kondisi_korban <= 2) {
+                $kondisi_korbanC = 0;
             }
+            $kondisi_korbanRule = 'Berat';
         }
 
-        //Set value keanggotaan
+        // ----------------------------------Min-Max ---------------------------------- //
+        $Maxjam_kecelakaan = max($jam_kecelakaanA, $jam_kecelakaanB, $jam_kecelakaanC, $jam_kecelakaanD);
+        $Maxkepadatan = max($kepadatanA, $kepadatanB, $kepadatanC);
+        $Maxintensitas_kecelakaan = max($intensitas_kecelakaanA, $intensitas_kecelakaanB, $intensitas_kecelakaanC);
+        $Maxkondisi_korban = max($kondisi_korbanA, $kondisi_korbanB, $kondisi_korbanC);
+        $minRule = min($Maxjam_kecelakaan, $Maxkepadatan, $Maxintensitas_kecelakaan, $Maxkondisi_korban);
+        //minRule belakang koma 3
+        $minRule = round($minRule, 3);
+        $rule = Rules::where('jam', $kecelakaanRule)
+            ->where('kepadatan', $kepadatanRule)
+            ->where('intensitas', $intensitas_kecelakaanRule)
+            ->where('kondisi_korban', $kondisi_korbanRule)
+            ->first();
+        $keanggotaan = $keanggotaanTengah = $keanggotaanAkhir = $batasBawah = $batasAtas = 0;
+        $luasA1 = $luasA2 = $luasA3 = $momentSatu = $momentDua = $momentTiga = $deffuzy  = 0;
+        $totalLuas = $totalMoment  = 0;
+        if($rule->tingkat_kerawanan == 'Tidak rawan'){
+            $keanggotaan = 20;
+            $keanggotaanAkhir = 30;
+            $batasBawah = 0;
+            $batasAtas = $keanggotaanAkhir - ($minRule * ($keanggotaanAkhir - $keanggotaan));
+            $luasA1 = $batasAtas * $minRule;
+            $luasA2 = ($keanggotaanAkhir - $batasAtas) * $minRule / 2;
+            $totalLuas = $luasA1 + $luasA2;
+            //pangkat 2 di laravel
+            $momentSatu = ($minRule/2 * pow($batasAtas, 2)) - ($minRule/2 * pow($batasBawah, 2));
+            $momentDua = ((3/2) * pow($keanggotaanAkhir, 2) - (0.1/3) * pow($keanggotaanAkhir, 3)) - ((3/2) * pow($batasAtas, 2) - (0.1/3) * pow($batasAtas, 3));
+            $totalMoment = $momentSatu + $momentDua;
+        }elseif($rule->tingkat_kerawanan == 'Rawan'){
+            $keanggotaan = 30;
+            $keanggotaanTengah = 50;
+            $keanggotaanAkhir = 70;
+            $batasBawah = $minRule * ($keanggotaanTengah - $keanggotaan) + $keanggotaan;
+            $batasAtas = $keanggotaanAkhir - ($minRule * ($keanggotaanAkhir - $keanggotaanTengah));
+        }elseif($rule->tingkat_kerawanan == 'Sangat Rawan'){
+            $keanggotaan = 70;
+            $keanggotaanAkhir = 90;
+            $batasBawah = $minRule * ($keanggotaanAkhir - $keanggotaan) + $keanggotaan;
+            $batasAtas = 100;
+            $luasA1 = ($batasBawah - $keanggotaan) * $minRule / 2;
+            $luasA2 = ($batasAtas - $batasBawah) * $minRule;
+            $totalLuas = $luasA1 + $luasA2;
 
-        // Jam Kecelaaan
-        $jam_kecelakaan_setA = 'dini pagi';
-        $jam_kecelakaan_setB = 'siang' ;
-        $jam_kecelakaan_setC = 'sore';
-        $jam_kecelakaan_setD = 'malam';
-        // Kepadatan
-        $kepadatan_setA = 'lengang';
-        $kepadatan_setB = 'ramai';
-        $kepadatan_setC = 'padat';
-        // Intensitas
-        $intensitas_kecelakaan_setA = 'rendah';
-        $intensitas_kecelakaan_setB = 'sedang';
-        $intensitas_kecelakaan_setC = 'tinggi';
-        // Kondisi Korban
-        $kondisi_korban_setA = 'ringan';
-        $kondisi_korban_setB = 'sedang';
-        $kondisi_korban_setC = 'berat';
-
-        // Fuzzifikasi
-
-        // Jam Kecelakaan
-        if (isset($jam_kecelakaanA)) {
-            $jam_kecelakaanOutput = [$jam_kecelakaanA];
-            $jam_kecelakaanGrade = [$jam_kecelakaan_setA];
-        }elseif (iseet($jam_kecelakaanB)) {
-            $jam_kecelakaanOutput = [$jam_kecelakaanB];
-            $jam_kecelakaanGrade = [$jam_kecelakaan_setB];
-        }elseif (isset($jam_kecelakaanC)) {
-            $jam_kecelakaanOutput = [$jam_kecelakaanC];
-            $jam_kecelakaanGrade = [$jam_kecelakaan_setC];
-        }elseif ($jam_kecelakaanD) {
-            $jam_kecelakaanOutput = [$jam_kecelakaanD];
-            $jam_kecelakaanGrade = [$jam_kecelakaan_setD];
+            $momentSatu = ((0.05/3)*pow($batasBawah,3) - (3.5/2)*pow($batasBawah,2)) - ((0.05/3)*pow($keanggotaan,3) - (3.5/2)*pow($keanggotaan,2));
+            $momentDua = ($minRule/2 * pow($batasAtas, 2)) - ($minRule/2 * pow($batasBawah, 2));
+            $totalMoment = $momentSatu + $momentDua;
         }
-
-        // Kepadatan
-        if (isset($kepadatanA)) {
-            $kepadatanOutput = [$kepadatanA];
-            $kepadatanGrade = [$kepadatan_setA];
-        }elseif (isset($kepadatanB)) {
-            $kepadatanOutput = [$kepadatanB];
-            $kepadatanGrade = [$kepadatan_setB];
-        }elseif (isset($kepadatanC)) {
-            $kepadatanOutput = [$kepadatanC];
-            $kepadatanGrade = [$kepadatan_setC];
-        }
-
-        // Intensitas
-        if (isset($intensitas_kecelakaanA)) {
-            $intensitas_kecelakaanOutput = [$intensitas_kecelakaanA];
-            $intensitas_kecelakaanGrade = [$intensitas_kecelakaan_setA];
-        }elseif (isset($intensitas_kecelakaanB)) {
-            $intensitas_kecelakaanOutput = [$intensitas_kecelakaanB];
-            $intensitas_kecelakaanGrade = [$intensitas_kecelakaan_setB];
-        }elseif (isset($intensitas_kecelakaanC)) {
-            $intensitas_kecelakaanOutput = [$intensitas_kecelakaanC];
-            $intensitas_kecelakaanGrade = [$intensitas_kecelakaan_setC];
-        }
-
-        // Kondisi Korban
-        if (isset($kondisi_korbanA)) {
-            $kondisi_korbanOutput = [$kondisi_korbanA];
-            $kondisi_korbanGrade = [$kondisi_korban_setA];
-        }elseif (isset($kondisi_korbanB)) {
-            $kondisi_korbanOutput = [$kondisi_korbanB];
-            $kondisi_korbanGrade = [$kondisi_korban_setB];
-        }elseif (isset($kondisi_korbanC)) {
-            $kondisi_korbanOutput = [$kondisi_korbanC];
-            $kondisi_korbanGrade = [$kondisi_korban_setC];
-        }
-
-        
-
-
-
-
-
-
-
+        $deffuzy = $totalMoment / $totalLuas;
+        return [
+            'jam_kecelakaan' => $jam_kecelakaan,
+            'kepadatan' => $kepadatan,
+            'intensitas_kecelakaan' => $intensitas_kecelakaan,
+            'kondisi_korban' => $kondisi_korban,
+            'jam_kecelakaanA' => $jam_kecelakaanA,
+            'jam_kecelakaanB' => $jam_kecelakaanB,
+            'jam_kecelakaanC' => $jam_kecelakaanC,
+            'jam_kecelakaanD' => $jam_kecelakaanD,
+            'kepadatanA' => $kepadatanA,
+            'kepadatanB' => $kepadatanB,
+            'kepadatanC' => $kepadatanC,
+            'intensitas_kecelakaanA' => $intensitas_kecelakaanA,
+            'intensitas_kecelakaanB' => $intensitas_kecelakaanB,
+            'intensitas_kecelakaanC' => $intensitas_kecelakaanC,
+            'kondisi_korbanA' => $kondisi_korbanA,
+            'kondisi_korbanB' => $kondisi_korbanB,
+            'kondisi_korbanC' => $kondisi_korbanC,
+            'kecelakaanRule' => $kecelakaanRule,
+            'kepadatanRule' => $kepadatanRule,
+            'intensitas_kecelakaanRule' => $intensitas_kecelakaanRule,
+            'kondisi_korbanRule' => $kondisi_korbanRule,
+            'Maxjam_kecelakaan' => $Maxjam_kecelakaan,
+            'Maxkepadatan' => $Maxkepadatan,
+            'Maxintensitas_kecelakaan' => $Maxintensitas_kecelakaan,
+            'Maxkondisi_korban' => $Maxkondisi_korban,
+            'minRule' => $minRule,
+            'rule' => $rule,
+            'keanggotaan' => $keanggotaan,
+            'keaanggotaanTengah' => $keanggotaanTengah, 
+            'keanggotaanAkhir' => $keanggotaanAkhir,
+            'batasBawah' => $batasBawah,
+            'batasAtas' => $batasAtas,
+            'luasA1' => $luasA1,
+            'luasA2' => $luasA2,
+            'luasA3' => $luasA3,
+            'momentSatu' => $momentSatu,
+            'momentDua' => $momentDua,
+            'momentTiga' => $momentTiga,
+            'totalLuas' => $totalLuas,
+            'totalMoment' => $totalMoment,
+            'deffuzy' => $deffuzy ?? 0,
+        ];
     }
 }

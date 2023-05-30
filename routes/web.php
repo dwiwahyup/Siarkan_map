@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArusLantasController;
 use App\Http\Controllers\DaerahRawanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FuzzyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JalanController;
 use App\Http\Controllers\KecelakaanController;
@@ -38,7 +39,7 @@ Route::get('/datakecelakaan', function () {
 // Route::get('/pemetaan', function () {
 //     return view('users.pemetaan.index');
 // });
-
+Route::post('/fuzzy', [FuzzyController::class, 'fuzzy'])->name('fuzzy');
 Route::get('/pemetaan', [PemetaaanUserController::class, 'index']);
 // Route::get('/program', [HomeController::class, 'program']);
 // Route::get('/', function () {

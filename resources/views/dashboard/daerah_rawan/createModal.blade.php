@@ -8,14 +8,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('fuzzy') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="row g-2">
                         <div class="mb-3 col-md-6">
                             <label for="inputState" class="form-label">Nama Jalan</label>
                             <select id="inputState" class="form-select">
                                 <option>Choose</option>
                                 @foreach ($jalan as $lokasi)
-                                    <option>{{ $lokasi->nama_jalan }}</option>
+                                    <option value="{{ $lokasi->nama_jalan }}">{{ $lokasi->nama_jalan }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -39,7 +40,7 @@
                     <div class="row g-2">
                         <div class="mb-3 col-md-6">
                             <label class="form-label">Jam Kecelakaan</label>
-                            <input class="form-control" type="time" name="jam_kecelakaan">
+                            <input class="form-control" type="text" name="jam_kecelakaan">
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="inputPassword4" class="form-label">Kepadatan</label>
@@ -62,7 +63,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Proses</button>
+                        <button type="submit" class="btn btn-primary">Proses</button>
                     </div>
                 </form>
             </div>
