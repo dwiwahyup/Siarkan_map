@@ -1,10 +1,15 @@
+<style>
+    .logo {
+  width: 200px;
+  height: 80px;
+}
+</style>
 <header class="wrapper bg-light">
     <nav class="navbar navbar-expand-lg classic transparent navbar-light">
         <div class="container flex-lg-row flex-nowrap align-items-center">
             <div class="navbar-brand w-100">
                 <a href="{{ url('/') }}">
-                    <img src="{{ url('assets/users/img/logo-dark.png') }}"
-                        srcset="{{ url('assets/users/img/logo-dark@2x.png 2x') }}" alt="" />
+                    <img class="logo" src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685518528/Rawan%20Kecelakaan/image-removebg-preview_jnsqbl.png"/>
                 </a>
             </div>
             <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">

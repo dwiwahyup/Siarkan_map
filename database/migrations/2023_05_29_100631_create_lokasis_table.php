@@ -24,6 +24,7 @@ class CreateLokasisTable extends Migration
             $table->string('intensitas_kecelakaan');
             $table->string('kondisi_korban');
             $table->string('tingkat_kerawanan');
+            $table->BigInteger('rules_id');
             $table->timestamps();
         });
     }
