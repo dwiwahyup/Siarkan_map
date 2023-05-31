@@ -26,55 +26,127 @@
                         <div class="tab-pane show active" id="alt-pagination-preview">
                             <div class="modal-content">
                                 <div class="modal-body">
+                                    <h4>Inputan</h4>
                                     <div class="row g-2">
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label">Nama Jalan</label>
-                                            <input name="alamat" type="text" class="form-control">
+                                            <input name="alamat" type="text" class="form-control"
+                                                value="{{ $data->nama_jalan }}" disabled>
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label">Alamat</label>
-                                            <input name="alamat" type="text" class="form-control">
+                                            <input name="alamat" type="text" class="form-control"
+                                                value="{{ $data->alamat }}" disabled>
                                         </div>
                                     </div>
 
                                     <div class="row g-2">
                                         <div class="mb-3 col-md-6">
                                             <label for="inputPassword4" class="form-label">Lattitude</label>
-                                            <input name="lattitude" type="text" class="form-control">
+                                            <input name="lattitude" type="text" class="form-control"
+                                                value="{{ $data->latitude }}" disabled>
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="inputPassword4" class="form-label">Longitude</label>
-                                            <input name="longitude" type="text" class="form-control">
+                                            <input name="longitude" type="text" class="form-control"
+                                                value="{{ $data->longitude }}" disabled>
                                         </div>
                                     </div>
 
                                     <div class="row g-2">
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label">Jam Kecelakaan</label>
-                                            <input class="form-control" type="time" name="jam_kecelakaan">
+                                            <input class="form-control" type="text" name="jam_kecelakaan"
+                                                value="{{ $data->jam_kecelakaan }}" disabled>
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="inputPassword4" class="form-label">Kepadatan</label>
-                                            <input name="kepadatan" type="text" class="form-control">
+                                            <input name="kepadatan" type="text" class="form-control"
+                                                value="{{ $data->kepadatan }}" disabled>
                                         </div>
                                     </div>
 
                                     <div class="row g-2">
                                         <div class="mb-3 col-md-6">
                                             <label for="inputPassword4" class="form-label">Intensitas Kecelakaan</label>
-                                            <input name="indensitas_kecelakaan" type="text" class="form-control">
+                                            <input name="intensitas_kecelakaan" type="text" class="form-control"
+                                                value="{{ $data->intensitas_kecelakaan }}" disabled>
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="inputPassword4" class="form-label">Kondisi Korban</label>
-                                            <input name="kondisi_korban" type="text" class="form-control">
+                                            <input name="kondisi_korban" type="text" class="form-control"
+                                                value="{{ $data->kondisi_korban }}" disabled>
                                         </div>
                                     </div>
                                 </div>
-                                <label for="inputPassword4" class="form-label">Klafisikasi Kerawanan</label>
+                                <hr>
+                                <h4>Fungsi Keanggotaan</h4>
+                                <div class="row g-2">
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Jam</label>
+                                        <input name="alamat" type="text" class="form-control"
+                                            value="{{ $keanggotaan['jam'] }}" disabled>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Kepadatan</label>
+                                        <input name="alamat" type="text" class="form-control"
+                                            value="{{ $keanggotaan['kepadatan'] }}" disabled>
+                                    </div>
+                                </div>
+                                <div class="row g-2">
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Intensitas</label>
+                                        <input name="alamat" type="text" class="form-control"
+                                            value="{{ $keanggotaan['intensitas'] }}" disabled>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Kondisi Korban</label>
+                                        <input name="alamat" type="text" class="form-control"
+                                            value="{{ $keanggotaan['kondisiKorban'] }}" disabled>
+                                    </div>
+                                </div>
+                                <hr>
+                                <h4>Rule</h4>
+                                <div class="row g-2">
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Jam</label>
+                                        <input name="alamat" type="text" class="form-control"
+                                            value="{{ $data->rules->jam }}" disabled>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Kepadatan</label>
+                                        <input name="alamat" type="text" class="form-control"
+                                            value="{{ $data->rules->kepadatan }}" disabled>
+                                    </div>
+                                </div>
+                                <div class="row g-2">
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Intensitas</label>
+                                        <input name="alamat" type="text" class="form-control"
+                                            value="{{ $data->rules->intensitas }}" disabled>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Kondisi Korban</label>
+                                        <input name="alamat" type="text" class="form-control"
+                                            value="{{ $data->rules->kondisi_korban }}" disabled>
+                                    </div>
+                                </div>
+                                <hr>
+                                <h4>Deffuzifikasi</h4>
+                                <div class="mb-3 col-md-12">
+                                    <input name="alamat" type="text" class="form-control"
+                                        value="{{ $defuzzy }}" disabled>
+                                </div>
+                                <hr>
+                                <h4>Klafisikasi Kerawanan</h4>
                                 <div class="col-md-6">
-                                    <button type="button" class="btn btn-danger">Sangat Rawan</button>
-                                    <button type="button" class="btn btn-warning">Rawan</button>
-                                    <button type="button" class="btn btn-info">Tidak Rawan</button>
+                                    @if ($data->tingkat_kerawanan == 'Sangat rawan')
+                                        <button type="button" class="btn btn-danger">Sangat Rawan</button>
+                                    @elseif ($data->tingkat_kerawanan == 'Rawan')
+                                        <button type="button" class="btn btn-warning">Rawan</button>
+                                    @else
+                                        <button type="button" class="btn btn-info">Tidak Rawan</button>
+                                    @endif
                                 </div>
                             </div>
                         </div>

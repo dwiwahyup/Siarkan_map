@@ -13,7 +13,7 @@
                     <div class="row g-2">
                         <div class="mb-3 col-md-6">
                             <label for="inputState" class="form-label">Nama Jalan</label>
-                            <select id="inputState" class="form-select">
+                            <select id="inputState" class="form-select" name="nama_jalan">
                                 <option>Choose</option>
                                 @foreach ($jalan as $lokasi)
                                     <option value="{{ $lokasi->nama_jalan }}">{{ $lokasi->nama_jalan }}</option>

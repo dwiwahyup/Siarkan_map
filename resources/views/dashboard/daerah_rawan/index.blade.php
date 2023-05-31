@@ -48,21 +48,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Jalan Tuban - Bancar</td>
-                                        <td>Km 02 Simpang 3 Semen</td>
-                                        <td>Sangat Rawan</td>
-                                        <td>
-                                            <a href="/dashboard/details" type="button" class="btn btn-outline-info"><i
-                                                    class="mdi mdi-eye"></i></a>
-                                            <button type="button" data-bs-toggle="modal" data-bs-target="#edit-data"
-                                                class="btn btn-outline-success"><i class="mdi mdi-note-edit-outline"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
-                                                data-bs-target="#warning-alert-modal"><i class="mdi mdi-window-close"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    @foreach ($data as $lokasi)
+                                        <tr>
+                                            <td>{{ $lokasi->nama_jalan }}</td>
+                                            <td>{{ $lokasi->alamat }}</td>
+                                            <td>{{ $lokasi->tingkat_kerawanan }}</td>
+                                            <td>
+                                                <a href="{{ route('daerahrawan.show', $lokasi->id) }}" type="button"
+                                                    class="btn btn-outline-info"><i class="mdi mdi-eye"></i></a>
+                                                <button type="button" class="btn btn-outline-warning"
+                                                    data-bs-toggle="modal" data-bs-target="#warning-alert-modal"><i
+                                                        class="mdi mdi-window-close"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
