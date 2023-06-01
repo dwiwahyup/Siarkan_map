@@ -64,7 +64,14 @@ class FuzzyController extends Controller
             'tingkat_kerawanan' => $rule->tingkat_kerawanan,
             'rules_id' => $rule->id,
         ]);
+        // dd($lokasi);
 
-        return redirect()->route('daerahrawan.index')->with('success', 'Data Berhasil Ditambahkan');
+        //if has auth return to dashboard if not return to home
+        if (auth()->user()) {
+            return redirect()->route('daerahrawan.index')->with('success', 'Data Berhasil Ditambahkan');
+        } else {
+            return redirect()->route('pemetaan')->with('success', 'Data Berhasil Ditambahkan');
+        }
+
     }
 }

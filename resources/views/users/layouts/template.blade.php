@@ -10,7 +10,7 @@
         content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
     <meta name="author" content="elemis">
     <title>SIARKAN (Sitem Informasi Pemetaan Daerah Rawan Kecelakaan)</title>
-    <link rel="shortcut icon" href="{{ url('assets/img/favicon.png') }}">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/diptxmzhz/image/upload/v1685521185/Rawan%20Kecelakaan/image-removebg-preview_2_wwoot2.png">
     <link rel="stylesheet" href="{{ url('assets/users/css/plugins.css') }}">
     <link rel="stylesheet" href="{{ url('assets/users/css/style.css') }}">
     <link rel="stylesheet" href="{{ url('assets/users/css/colors/sky.css') }}">

@@ -1,4 +1,4 @@
-{{-- ----------------------------------------Modal Tambah Data --------------------------------------------- --}}
+<!-- {{-- ----------------------------------------Modal Tambah Data --------------------------------------------- --}} -->
 
 <div class="modal fade" id="modal-01" tabindex="-1">
     {{-- <div class="modal-dialog modal-xl"> --}}
@@ -11,7 +11,7 @@
                 <div class="row">
                     {{-- <div class=""> --}}
                     <div id="mc_embed_signup">
-                        <form action="" class="text-start mb-3" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('fuzzy')}}" class="text-start mb-3" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="container">
@@ -19,12 +19,12 @@
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Nama Jalan</label>
                                         <div class="form-select-wrapper mb-4">
-                                            <select class="form-select" aria-label="Default select example"
-                                                name="nama_jalan">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                            <select id="inputState" class="form-select" name="nama_jalan">
+                                                <option>Choose</option>
+                                                @foreach ($jalan as $lokasi)
+                                                    <option value="{{ $lokasi->nama_jalan }}">{{ $lokasi->nama_jalan }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                                 <div class="row g-2">
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Jam Kecelakaan</label>
-                                        <input class="form-control" type="time" name="jam_kecelakaan">
+                                        <input class="form-control" type="text" name="jam_kecelakaan">
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="inputPassword4" class="form-label">Kepadatan</label>
@@ -60,7 +60,7 @@
                                     <div class="mb-3 col-md-6">
                                         <label for="inputPassword4" class="form-label">Intensitas
                                             Kecelakaan</label>
-                                        <input name="indensitas_kecelakaan" type="text" class="form-control">
+                                        <input name="intensitas_kecelakaan" type="text" class="form-control">
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="inputPassword4" class="form-label">Kondisi
@@ -70,8 +70,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-3">
-                                        <a class="btn btn-primary rounded-pill btn-login w-100 mb-2">Hitung
-                                            Kerawanan</a>
+                                        <button type="sumbit" class="btn btn-primary rounded-pill btn-login w-100 mb-2">Hitung
+                                            Kerawanan</button>
                                     </div>
                                 </div>
                             </div>

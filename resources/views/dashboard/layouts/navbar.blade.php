@@ -8,10 +8,10 @@
                 <!-- Logo light -->
                 <a href="index.html" class="logo-light">
                     <span class="logo-lg">
-                        <img src="{{ url('assets/dashboard/images/logo.png')}}" alt="logo">
+                        <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png" alt="logo">
                     </span>
                     <span class="logo-sm">
-                        <img src="{{ url('assets/dashboard/images/logo-sm.png')}}" alt="small logo">
+                        <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png" alt="small logo">
                     </span>
                 </a>
 
@@ -60,12 +60,8 @@
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle arrow-none nav-user px-2" data-bs-toggle="dropdown" href="#"
                     role="button" aria-haspopup="false" aria-expanded="false">
-                    <span class="account-user-avatar">
-                        <img src="{{ url('assets/dashboard/images/users/avatar-1.jpg')}}" alt="user-image" width="32"
-                            class="rounded-circle">
-                    </span>
                     <span class="d-lg-flex flex-column gap-1 d-none">
-                        <h5 class="my-0">{{ Auth::user()->name }}</h5>
+                        <h5 class="my-0">Hallo, {{ Auth::user()->name }}</h5>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
@@ -74,11 +70,11 @@
                         <h6 class="text-overflow m-0">Welcome {{ Auth::user()->name }} !</h6>
                     </div>
 
-                    <!-- item-->
+                    <!-- item
                     <a href="javascript:void(0);" class="dropdown-item">
                         <i class="mdi mdi-account-circle me-1"></i>
                         <span>My Account</span>
-                    </a>
+                    </a> -->
 
                     <!-- item-->
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

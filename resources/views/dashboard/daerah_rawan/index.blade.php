@@ -60,6 +60,39 @@
                                                     data-bs-toggle="modal" data-bs-target="#warning-alert-modal"><i
                                                         class="mdi mdi-window-close"></i>
                                                 </button>
+
+
+                                                <div id="warning-alert-modal" class="modal fade" tabindex="-1"
+                                                    role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body p-4">
+                                                                <div class="text-center">
+                                                                    <i class="ri-alert-line h1 text-warning"></i>
+                                                                    <h4 class="mt-2">Hapus Data</h4>
+                                                                    <div class="text-center">
+                                                                        <p class="mt-3">Anda yakin menghapus
+                                                                            data?
+                                                                            <br>
+                                                                            Data akan terhapus dari database
+                                                                        </p>
+                                                                    </div>
+                                                                    <form
+                                                                        action="{{ route('daerahrawan.destroy', $lokasi->id) }}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type="submit"
+                                                                            class="btn btn-warning btn-sm">Hapus
+                                                                            Data</button>
+                                                                    </form>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -85,20 +118,6 @@
 
     <!-- Warning Alert Modal -->
 
-    <div id="warning-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-body p-4">
-                    <div class="text-center">
-                        <i class="ri-alert-line h1 text-warning"></i>
-                        <h4 class="mt-2">Hapus Data</h4>
-                        <p class="mt-3">Apakah anda yakin akan menghapus data? Data akan terhapus dari database</p>
-                        <button type="button" class="btn btn-warning my-2" data-bs-dismiss="modal">Hapus</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     @include('dashboard.daerah_rawan.createModal')
     @include('dashboard.daerah_rawan.editModal')

@@ -3,8 +3,8 @@
 
     <!-- Brand Logo Light -->
     <a href="index.html" class="logo logo-light">
-        <span class="logo-lg">
-            <img src="{{ url('assets/dashboard/images/logo.png')}}" alt="logo">
+        <span class="">
+            <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png"  height="30" width="150" alt="logo">
         </span>
         <span class="logo-sm">
             <img src="{{ url('assets/dashboard/images/logo-sm.png')}}" alt="small logo">
@@ -53,10 +53,16 @@
                 </a>
             </li>
 
-            <li class="side-nav-item">
+            <!-- <li class="side-nav-item">
                 <a href="{{'/dashboard/kecelakaan'}}" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
                     <span> Data Kecelakaan </span>
+                </a>
+            </li> -->
+            <li class="side-nav-item">
+                <a href="{{'/dashboard/rules'}}" class="side-nav-link">
+                    <i class="uil-clipboard-notes"></i>
+                    <span> Rules</span>
                 </a>
             </li>
             <li class="side-nav-item">
@@ -65,12 +71,6 @@
                     <span> Cek Kerawanan</span>
                 </a>
             </li>
-            <!-- <li class="side-nav-item">
-                <a href="{{'/aruslantas'}}" class="side-nav-link">
-                    <i class="uil-comments-alt"></i>
-                    <span> Data Arus Lalu Lintas </span>
-                </a>
-            </li> -->
 
         </ul>
         <!--- End Sidemenu -->

@@ -1,17 +1,17 @@
 @extends('auth.template')
 
 @section('content')
-
+<title>Log In</title>
 <div class="card">
 
     <!-- Logo -->
-    <div class="card-header py-4 text-center bg-primary">
+    <div class="card-header px-4 text-center ">
         <a href="index.html">
-            <span><img src="{{url('assets/dashboard/images/logo.png')}}" alt="logo" height="22"></span>
+            <span><img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png" alt="logo" height="60" width="200"></span>
         </a>
     </div>
-
-    <div class="card-body p-4">
+    <hr>
+    <div class="card-body px-4 pt-0 pb-4">
         <div class="text-center w-75 m-auto">
             <h4 class="text-dark-50 text-center pb-0 fw-bold">Login</h4>
             <p class="text-muted mb-4">Masukkan email dan password anda untuk masuk</p>
@@ -30,7 +30,6 @@
             </div>
 
             <div class="mb-3">
-                <a href="pages-recoverpw.html" class="text-muted float-end"><small>Forgot your password?</small></a>
                 <label for="password" class="form-label">Password</label>
                 <div class="input-group input-group-merge">
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
@@ -43,13 +42,6 @@
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
-                </div>
-            </div>
-
-            <div class="mb-3 mb-3">
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
-                    <label class="form-check-label" for="checkbox-signin">Remember me</label>
                 </div>
             </div>
 

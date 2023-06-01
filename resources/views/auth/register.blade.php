@@ -1,14 +1,16 @@
 @extends('auth.template')
 
 @section('content')
+<title>Register</title>
 <div class="card">
     <!-- Logo-->
-    <div class="card-header py-4 text-center bg-primary">
+    <div class="card-header px-4 text-center ">
         <a href="index.html">
-            <span><img src="{{url('assets/dashboard/images/logo.png')}}" alt="logo" height="22"></span>
+            <span><img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png" alt="logo" height="60" width="200"></span>
         </a>
     </div>
-    <div class="card-body p-4">
+<hr>
+    <div class="card-body px-4 pt-0 pb-4">
         <div class="text-center w-75 m-auto">
             <h4 class="text-dark-50 text-center mt-0 fw-bold">Registrasi</h4>
             <p class="text-muted mb-4">Belum Punya Akun? Buat akun anda sekarang </p>

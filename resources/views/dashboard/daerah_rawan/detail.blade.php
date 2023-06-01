@@ -27,6 +27,7 @@
                             <div class="modal-content">
                                 <div class="modal-body">
                                     <h4>Inputan</h4>
+                                    <small>Informasi Umum</small>
                                     <div class="row g-2">
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label">Nama Jalan</label>
@@ -52,7 +53,7 @@
                                                 value="{{ $data->longitude }}" disabled>
                                         </div>
                                     </div>
-
+                                    <small>Inputan Kondisi</small>
                                     <div class="row g-2">
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label">Jam Kecelakaan</label>
@@ -81,58 +82,97 @@
                                 </div>
                                 <hr>
                                 <h4>Fungsi Keanggotaan</h4>
-                                <div class="row g-2">
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Jam</label>
-                                        <input name="alamat" type="text" class="form-control"
-                                            value="{{ $keanggotaan['jam'] }}" disabled>
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Kepadatan</label>
-                                        <input name="alamat" type="text" class="form-control"
-                                            value="{{ $keanggotaan['kepadatan'] }}" disabled>
-                                    </div>
-                                </div>
-                                <div class="row g-2">
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Intensitas</label>
-                                        <input name="alamat" type="text" class="form-control"
-                                            value="{{ $keanggotaan['intensitas'] }}" disabled>
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Kondisi Korban</label>
-                                        <input name="alamat" type="text" class="form-control"
-                                            value="{{ $keanggotaan['kondisiKorban'] }}" disabled>
-                                    </div>
-                                </div>
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Variabel Input</th>
+                                            <th scope="col">Nilai</th>
+                                            <th scope="col">Fungsi Keanggotaan</th>
+                                            <th scope="col">Nilai Keanggotaan </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Jam Kecelakaan</td>
+                                            <td>{{ $data->jam_kecelakaan }}</td>
+                                            <td>{{ $data->rules->jam }}</td>
+                                            <td>{{ $keanggotaan['jam'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Kepadatan Kendaraan</td>
+                                            <td>{{ number_format($data->kepadatan, 3) }}</td>
+                                            <td>{{ $data->rules->kepadatan }}</td>
+                                            <td>{{ $keanggotaan['kepadatan'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Intensitas Kecelakaan</td>
+                                            <td>{{ $data->intensitas_kecelakaan }}</td>
+                                            <td>{{ $data->rules->intensitas }}</td>
+                                            <td>{{ $keanggotaan['intensitas'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>Kondisi Korban</td>
+                                            <td>{{ $data->kondisi_korban }}</td>
+                                            <td>{{ $data->rules->kondisi_korban }}</td>
+                                            <td>{{ $keanggotaan['kondisiKorban'] }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 <hr>
-                                <h4>Rule</h4>
-                                <div class="row g-2">
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Jam</label>
-                                        <input name="alamat" type="text" class="form-control"
-                                            value="{{ $data->rules->jam }}" disabled>
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Kepadatan</label>
-                                        <input name="alamat" type="text" class="form-control"
-                                            value="{{ $data->rules->kepadatan }}" disabled>
-                                    </div>
-                                </div>
-                                <div class="row g-2">
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Intensitas</label>
-                                        <input name="alamat" type="text" class="form-control"
-                                            value="{{ $data->rules->intensitas }}" disabled>
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Kondisi Korban</label>
-                                        <input name="alamat" type="text" class="form-control"
-                                            value="{{ $data->rules->kondisi_korban }}" disabled>
-                                    </div>
-                                </div>
+                                <h4>Rule Yang Digunakan</h4>
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Jam Kecelakaan</th>
+                                            <th scope="col">Kepadatan Kendaraan</th>
+                                            <th scope="col">Intensitas Kecelakaan</th>
+                                            <th scope="col">Kondisi Korban </th>
+                                            <th scope="col">Tingkat Kerawanan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>{{ $data->rules->jam }}</td>
+                                            <td>{{ $data->rules->kepadatan }}</td>
+                                            <td>{{ $data->rules->intensitas }}</td>
+                                            <td>{{ $data->rules->kondisi_korban }}</td>
+                                            <td>
+                                                @if ($data->rules->tingkat_kerawanan == 'Sangat Rawan')
+                                                    <span style="color: red;">{{ $data->rules->tingkat_kerawanan }}</span>
+                                                @elseif ($data->rules->tingkat_kerawanan == 'Rawan')
+                                                    <span
+                                                        style="color: yellow;">{{ $data->rules->tingkat_kerawanan }}</span>
+                                                @else
+                                                    <span
+                                                        style="color: green;">{{ $data->rules->tingkat_kerawanan }}</span>
+                                                @endif
+                                            </td>
+
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 <hr>
                                 <h4>Deffuzifikasi</h4>
+
+                                <h6>Batas</h6>
+
+                                <h6>Luas</h6>
+                                <p>{{ $luasA1 }}</p>
+                                <p>{{ $luasA2 }}</p>
+                                <p>{{ $luasA3 }}</p>
+                                <h6>Moment</h6>
+                                <p>{{ $momentSatu }}</p>
+                                <p>{{ $momentDua }}</p>
+                                <p>{{ $momentTiga }}</p>
+                                <h6>Deffuzifikasi</h6>
                                 <div class="mb-3 col-md-12">
                                     <input name="alamat" type="text" class="form-control"
                                         value="{{ $defuzzy }}" disabled>
@@ -140,7 +180,7 @@
                                 <hr>
                                 <h4>Klafisikasi Kerawanan</h4>
                                 <div class="col-md-6">
-                                    @if ($data->tingkat_kerawanan == 'Sangat rawan')
+                                    @if ($data->tingkat_kerawanan == 'Sangat Rawan')
                                         <button type="button" class="btn btn-danger">Sangat Rawan</button>
                                     @elseif ($data->tingkat_kerawanan == 'Rawan')
                                         <button type="button" class="btn btn-warning">Rawan</button>

@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JalanController;
 use App\Http\Controllers\KecelakaanController;
 use App\Http\Controllers\PemetaaanUserController;
+use App\Http\Controllers\RulesController;
 use App\Models\ArusLantas;
 use Illuminate\Support\Facades\Route;
 
@@ -36,17 +37,12 @@ Route::get('/datakecelakaan', function () {
     return view('users.data_kecelakaan');
 });
 
-// Route::get('/pemetaan', function () {
-//     return view('users.pemetaan.index');
-// });
-Route::post('/fuzzy', [FuzzyController::class, 'fuzzy'])->name('fuzzy');
-Route::get('/pemetaan', [PemetaaanUserController::class, 'index']);
-// Route::get('/program', [HomeController::class, 'program']);
-// Route::get('/', function () {
-//         return view('dashboard');
-//     })->middleware('auth');
 
-// route::get('/', [HomeController::class,'index']);
+Route::post('/fuzzy', [FuzzyController::class, 'fuzzy'])->name('fuzzy');
+Route::get('/pemetaan', [PemetaaanUserController::class, 'index'])->name('pemetaan');
+
+//detail
+Route::get('/detail/{id}', [PemetaaanUserController::class, 'detail'])->name('detail');
 
 Route::middleware(['auth', 'verified'])
     ->prefix('dashboard')
@@ -56,6 +52,8 @@ Route::middleware(['auth', 'verified'])
             Route::resource('jalan', JalanController::class);
             Route::resource('kecelakaan', KecelakaanController::class);
             Route::resource('jalan.aruslantas', ArusLantasController::class);
+            //rules
+            Route::resource('rules', RulesController::class);
             Route::resource('daerahrawan', DaerahRawanController::class);
             Route::get('/details', [DaerahRawanController::class, 'detail'])->name('daerahrawan.detail');
         });

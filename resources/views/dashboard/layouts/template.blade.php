@@ -9,7 +9,7 @@
     <meta content="Coderthemes" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ url('assets/dashboard/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/diptxmzhz/image/upload/v1685521185/Rawan%20Kecelakaan/image-removebg-preview_2_wwoot2.png">
     {{-- {{ url('')}} --}}
     <!-- Daterangepicker css -->
     <link rel="stylesheet" href="{{ url('assets/dashboard/vendor/daterangepicker/daterangepicker.css')}}">
@@ -69,17 +69,10 @@
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <script>
                                 document.write(new Date().getFullYear())
                             </script> © Hyper - Coderthemes.com
-                        </div>
-                        <div class="col-md-6">
-                            <div class="text-md-end footer-links d-none d-md-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
                         </div>
                     </div>
                 </div>

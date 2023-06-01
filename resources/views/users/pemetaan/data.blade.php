@@ -14,7 +14,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 class="counter mb-1">3472</h3>
+                                        <h3 class="counter mb-1">{{ $sangatRawanCount }}</h3>
                                         <p class="mb-0">Sangat Rawan</p>
                                     </div>
                                 </div>
@@ -33,7 +33,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 class="counter mb-1">4537</h3>
+                                        <h3 class="counter mb-1">{{ $rawanCount }}</h3>
                                         <p class="mb-0">Rawan</p>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 class="counter mb-1">2654</h3>
+                                        <h3 class="counter mb-1">{{ $tidakRawanCount }}</h3>
                                         <p class="mb-0">Tidak Rawan</p>
                                     </div>
                                 </div>

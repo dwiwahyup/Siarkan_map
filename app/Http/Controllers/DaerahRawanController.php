@@ -25,7 +25,7 @@ class DaerahRawanController extends Controller
     //show data
     public function show($id)
     {
-        $data = Lokasi::find($id)->with('rules')->first();
+        $data = Lokasi::where('id', $id)->with('rules')->first();
         // ----------------------------------Jam Kecelakaan---------------------------------- //
         $jam = keanggotaanJam($data->jam_kecelakaan);
 
@@ -45,8 +45,17 @@ class DaerahRawanController extends Controller
         $Maxkondisi_korban = max($kondisiKorban['kondisi_korbanA'], $kondisiKorban['kondisi_korbanB'], $kondisiKorban['kondisi_korbanC']);
         $minRule = min($Maxjam_kecelakaan, $Maxkepadatan, $Maxintensitas_kecelakaan, $Maxkondisi_korban);
 
+
         // ---------------------------------- Luas dan Moment ---------------------------------- //
         $luasMoment = hitungLuasMoment($data->tingkat_kerawanan, $minRule);
+
+        $luasA1 = $luasMoment['luasA1'];
+        $luasA2 = $luasMoment['luasA2'];
+        $luasA3 = $luasMoment['luasA3'];
+
+        $momentSatu = $luasMoment['momentSatu'];
+        $momentDua = $luasMoment['momentDua'];
+        $momentTiga = $luasMoment['momentTiga'];
 
         // ---------------------------------- Defuzzyfikasi ---------------------------------- //
         $defuzzy = $luasMoment['totalMoment'] / $luasMoment['totalLuas'];
@@ -60,7 +69,33 @@ class DaerahRawanController extends Controller
         return view('dashboard.daerah_rawan.detail', [
             'data' => $data,
             'keanggotaan' => $fungsiKeanggotaan,
+            'luasA1' => $luasA1,
+            'luasA2' => $luasA2,
+            'luasA3' => $luasA3,
+            'momentSatu' => $momentSatu,
+            'momentDua' => $momentDua,
+            'momentTiga' => $momentTiga,
             'defuzzy' => $defuzzy,
         ]);
     }
+
+    public function destroy(Lokasi $lokasi)
+    {
+        $lokasi->delete();
+        if ($lokasi) {
+            return redirect()
+                ->route('daerahrawan.index')
+                ->with([
+                    'success' => 'Data Jalan Berhasil Dihapus',
+                ]);
+        } else {
+            return redirect()
+                ->route('daerahrawan.index')
+                ->with([
+                    'error' => 'Some problem has occurred, please try again',
+                ]);
+        }
+        // return redirect('/jalan');
+    }
+
 }

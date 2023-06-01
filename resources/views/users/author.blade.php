@@ -9,22 +9,12 @@
                 <div class="post-header">
                     <h1 class="display-1 mb-5">Author Profile</h1>
                     <p>Berikut merupakan profile author dari SIARKAN (Sistem Informasi Pemetaan Daerah Rawan Kecelakaan)</p>
-                    <!-- <ul class="post-meta fs-17 mb-5">
-                        <li><i class="uil uil-clock"></i> Full time</li>
-                        <li><i class="uil uil-location-arrow"></i> Manchester, UK</li>
-                        <li><i class="uil uil-building"></i> Design Department</li>
-                    </ul> -->
-                    <!-- /.post-meta -->
                 </div>
-                <!-- /.post-header -->
             </div>
-            <!-- /column -->
         </div>
-        <!-- /.row -->
     </div>
-    <!-- /.container -->
 </section>
-<!-- /section -->
+
 <section class="wrapper bg-light">
     <div class="container pb-14 pb-md-16">
         <div class="row">
@@ -40,11 +30,9 @@
                                     </div>
 
                                     <div class="col-lg-6">
-                                        <!-- <img src="{{url('assets/users/img/icons/lineal/telemarketer.svg')}}" class="svg-inject icon-svg icon-svg-md mb-4" alt="" />
-                                        <h2 class="display-4 mb-8">Convinced yet? Let's make something great together.</h2> -->
                                         <div class="d-flex flex-row">
                                             <div>
-                                                <div class="icon text-primary fs-28 me-6 mt-n1"> <i class="uil uil-location-pin-alt"></i> </div>
+                                                <div class="icon text-primary fs-28 me-6 mt-n1"> <i class="uil uil-user"></i> </div>
                                             </div>
                                             <div>
                                                 <h5 class="mb-1">Nama</h5>
@@ -53,7 +41,7 @@
                                         </div>
                                         <div class="d-flex flex-row">
                                             <div>
-                                                <div class="icon text-primary fs-28 me-6 mt-n1"> <i class="uil uil-phone-volume"></i> </div>
+                                                <div class="icon text-primary fs-28 me-6 mt-n1"> <i class="uil uil-calender"></i> </div>
                                             </div>
                                             <div>
                                                 <h5 class="mb-1">Tempat, tanggal lahir</h5>
@@ -62,7 +50,7 @@
                                         </div>
                                         <div class="d-flex flex-row">
                                             <div>
-                                                <div class="icon text-primary fs-28 me-6 mt-n1"> <i class="uil uil-envelope"></i> </div>
+                                                <div class="icon text-primary fs-28 me-6 mt-n1"> <i class="uil uil-right-indent-alt"></i> </div>
                                             </div>
                                             <div>
                                                 <h5 class="mb-1">Jurusan/Prodi</h5>
@@ -71,7 +59,7 @@
                                         </div>
                                         <div class="d-flex flex-row">
                                             <div>
-                                                <div class="icon text-primary fs-28 me-6 mt-n1"> <i class="uil uil-envelope"></i> </div>
+                                                <div class="icon text-primary fs-28 me-6 mt-n1"> <i class="uil uil-home"></i> </div>
                                             </div>
                                             <div>
                                                 <h5 class="mb-1">Instansi</h5>
@@ -89,7 +77,7 @@
                                         </div>
                                         <div class="d-flex flex-row">
                                             <div>
-                                                <div class="icon text-primary fs-28 me-6 mt-n1"> <i class="uil uil-envelope"></i> </div>
+                                                <div class="icon text-primary fs-28 me-6 mt-n1"> <i class="uil uil-user-square"></i> </div>
                                             </div>
                                             <div>
                                                 <h5 class="mb-1">Personal Website</h5>
@@ -102,18 +90,12 @@
 
                             </div>
                         </div>
-                        <!-- /.card-body -->
                     </div>
-                    <!-- /.card -->
                 </div>
-                <!-- /.blog -->
             </div>
-            <!-- /column -->
         </div>
-        <!-- /.row -->
     </div>
-    <!-- /.container -->
 </section>
-<!-- /section -->
+
 
 @endsection

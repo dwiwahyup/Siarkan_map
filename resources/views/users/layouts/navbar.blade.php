@@ -65,10 +65,10 @@
                                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Hallo
                                     {{ Auth::user()->name }}</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="dropdown-item" href="./blog3.html">Profile
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

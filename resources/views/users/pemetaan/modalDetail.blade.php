@@ -1,6 +1,3 @@
-<a href="#" class="btn btn-outline-primary rounded-pill mx-1 mb-2 mb-md-0" data-bs-toggle="modal"
-    data-bs-target="#modal-02">Detail</a>
-
 {{-- ----------------------------------------Modal Detail --------------------------------------------- --}}
 
 <div class="modal fade" id="modal-02" tabindex="-1">
@@ -20,13 +17,7 @@
                                             <div class="mb-3 col-md-6">
                                                 <label class="form-label">Nama Jalan</label>
                                                 <div class="form-select-wrapper mb-4">
-                                                    <select class="form-select" aria-label="Default select example"
-                                                        name="nama_jalan">
-                                                        <option selected>Open this select menu</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </select>
+                                                    <input name="nama_jalan" type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="mb-3 col-md-6">
