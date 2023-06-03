@@ -17,7 +17,6 @@ class CreateJalansTable extends Migration
             $table->id();
             $table->string('slug', 70)->unique();
             $table->string('nama_jalan');
-            $table->string('panjang_jalan');
             $table->string('status_jalan');
             $table->timestamps();
 

@@ -9,7 +9,7 @@ class Lokasi extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama_jalan',
+        'jalan_id',
         'alamat',
         'latitude',
         'longitude',
@@ -24,5 +24,10 @@ class Lokasi extends Model
     public function rules()
     {
         return $this->belongsTo(Rules::class);
+    }
+
+    public function jalan()
+    {
+        return $this->belongsTo(Jalan::class);
     }
 }

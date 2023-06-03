@@ -58,13 +58,12 @@
                                             <td>{{ $rule->kondisi_korban }}</td>
                                             <td
                                                 style="color:
-                                            @if ($rule->tingkat_kerawanan == 'Sangat Rawan') red;
-                                            @elseif($rule->tingkat_kerawanan == 'Rawan')
-                                                orange;
-                                            @else
-                                                green; @endif">
+    @if ($rule->tingkat_kerawanan == 'Sangat Rawan') red;
+    @elseif($rule->tingkat_kerawanan == 'Rawan') orange;
+    @else green; @endif">
                                                 {{ $rule->tingkat_kerawanan }}
                                             </td>
+
                                             <td>
                                                 <a href="#" class="btn btn-warning btn-sm">Edit</a>
                                                 <a href="#" class="btn btn-danger btn-sm">Delete</a>

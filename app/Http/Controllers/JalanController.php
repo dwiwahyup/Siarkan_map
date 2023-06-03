@@ -25,7 +25,6 @@ class JalanController extends Controller
     {
         $this->validate($request, [
             'nama_jalan' => 'required',
-            'panjang_jalan' => 'required',
             'status_jalan' => 'required',
         ]);
 
@@ -65,7 +64,6 @@ class JalanController extends Controller
     {
         $this->validate($request, [
             'nama_jalan' => 'required',
-            'panjang_jalan' => 'required',
             'status_jalan' => 'required',
         ]);
 

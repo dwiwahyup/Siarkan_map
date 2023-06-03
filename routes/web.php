@@ -55,6 +55,9 @@ Route::middleware(['auth', 'verified'])
             //rules
             Route::resource('rules', RulesController::class);
             Route::resource('daerahrawan', DaerahRawanController::class);
+            //route delete daerah rawan
+            Route::post('/daerahrawan/delete/{lokasi}', [DaerahRawanController::class, 'delete'])->name('daerahrawan.delete');
+
             Route::get('/details', [DaerahRawanController::class, 'detail'])->name('daerahrawan.detail');
         });
     });

@@ -1,6 +1,5 @@
 <!-- Tambah Data -->
-<div id="tambah-data" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel"
-    aria-hidden="true">
+<div id="tambah-data" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fullWidthModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-full-width">
         <div class="modal-content">
             <div class="modal-header">
@@ -16,7 +15,7 @@
                             <select id="inputState" class="form-select" name="nama_jalan">
                                 <option>Choose</option>
                                 @foreach ($jalan as $lokasi)
-                                    <option value="{{ $lokasi->nama_jalan }}">{{ $lokasi->nama_jalan }}</option>
+                                <option value="{{ $lokasi->id}}">{{ $lokasi->nama_jalan }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -25,7 +24,6 @@
                             <input name="alamat" type="text" class="form-control" placeholder="Alamat">
                         </div>
                     </div>
-
                     <div class="row g-2">
                         <div class="mb-3 col-md-6">
                             <label for="inputPassword4" class="form-label">Lattitude</label>
@@ -43,21 +41,19 @@
                             <input class="form-control" type="text" name="jam_kecelakaan">
                         </div>
                         <div class="mb-3 col-md-6">
-                            <label for="inputPassword4" class="form-label">Kepadatan</label>
+                            <label for="inputPassword4" class="form-label">Kepadatan <span><small>(Luar Kota(5563-6862) Dalam Kota(6688-7405))</small></span></label>
                             <input name="kepadatan" type="text" class="form-control" placeholder="Kepadatan Jalan">
                         </div>
                     </div>
 
                     <div class="row g-2">
                         <div class="mb-3 col-md-6">
-                            <label for="inputPassword4" class="form-label">Intensitas Kecelakaan</label>
-                            <input name="intensitas_kecelakaan" type="text" class="form-control"
-                                placeholder="Intensitas Kecelakaan">
+                            <label for="inputPassword4" class="form-label">Intensitas Kecelakaan <span><small>(Luar Kota(55-68) Dalam Kota(654-724))</small></span> </label>
+                            <input name="intensitas_kecelakaan" type="text" class="form-control" placeholder="Intensitas Kecelakaan">
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="inputPassword4" class="form-label">Kondisi Korban</label>
-                            <input name="kondisi_korban" type="text" class="form-control"
-                                placeholder="Kondisi Korban">
+                            <input name="kondisi_korban" type="text" class="form-control" placeholder="Kondisi Korban">
                         </div>
                     </div>
 

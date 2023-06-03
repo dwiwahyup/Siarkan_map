@@ -25,17 +25,20 @@ class PemetaaanUserController extends Controller
     public function detail($id)
     {
         $data = Lokasi::where('id', $id)->with('rules')->first();
-        // ----------------------------------Jam Kecelakaan---------------------------------- //
         $jam = keanggotaanJam($data->jam_kecelakaan);
-
-        // ----------------------------------Kepadatan ---------------------------------- //
-        $kepadatanKec = keanggotaanKepadatan($data->kepadatan);
-
-        // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
-        $intensitas = KeanggotaanIntensitas($data->intensitas_kecelakaan);
-
         // ----------------------------------Kondisi Korban ---------------------------------- //
         $kondisiKorban = keanggotaanKondisiKorban($data->kondisi_korban);
+        if ($data->jalan->status_jalan == 'Dalam Kota') {
+            // ----------------------------------Kepadatan ---------------------------------- //
+            $kepadatanKec = keanggotaanKepadatanDalam($data->kepadatan);
+            // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
+            $intensitas = keanggotaanIntensitasDalam($data->intensitas_kecelakaan);
+        } elseif ($data->jalan->status_jalan == 'Luar Kota') {
+            // ----------------------------------Kepadatan ---------------------------------- //
+            $kepadatanKec = keanggotaanKepadatanLuar($data->kepadatan);
+            // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
+            $intensitas = keanggotaanIntensitasLuar($data->intensitas_kecelakaan);
+        }
 
         // // ----------------------------------Min-Max ---------------------------------- //
         $Maxjam_kecelakaan = max($jam['jam_kecelakaanA'], $jam['jam_kecelakaanB'], $jam['jam_kecelakaanC'], $jam['jam_kecelakaanD']);
@@ -62,8 +65,5 @@ class PemetaaanUserController extends Controller
             'fungsiKeanggotaan' => $fungsiKeanggotaan,
             'defuzzy' => $defuzzy
         ]);
-
     }
-
-
 }

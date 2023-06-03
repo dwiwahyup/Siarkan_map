@@ -10,8 +10,7 @@ class DaerahRawanController extends Controller
 {
     public function index()
     {
-        $data = Lokasi::all();
-        // dd($data);
+        $data = Lokasi::with('jalan')->get();
         $jalan = Jalan::all();
         // dd($jalan);
         return view('dashboard.daerah_rawan.index', ['data' => $data, 'jalan' => $jalan]);
@@ -25,19 +24,22 @@ class DaerahRawanController extends Controller
     //show data
     public function show($id)
     {
-        $data = Lokasi::where('id', $id)->with('rules')->first();
+        $data = Lokasi::where('id', $id)->with(['rules', 'jalan'])->first();
         // ----------------------------------Jam Kecelakaan---------------------------------- //
         $jam = keanggotaanJam($data->jam_kecelakaan);
-
-        // ----------------------------------Kepadatan ---------------------------------- //
-        $kepadatanKec = keanggotaanKepadatan($data->kepadatan);
-
-        // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
-        $intensitas = KeanggotaanIntensitas($data->intensitas_kecelakaan);
-
         // ----------------------------------Kondisi Korban ---------------------------------- //
         $kondisiKorban = keanggotaanKondisiKorban($data->kondisi_korban);
-
+        if ($data->jalan->status_jalan == 'Dalam Kota') {
+            // ----------------------------------Kepadatan ---------------------------------- //
+            $kepadatanKec = keanggotaanKepadatanDalam($data->kepadatan);
+            // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
+            $intensitas = keanggotaanIntensitasDalam($data->intensitas_kecelakaan);
+        } elseif ($data->jalan->status_jalan == 'Luar Kota') {
+            // ----------------------------------Kepadatan ---------------------------------- //
+            $kepadatanKec = keanggotaanKepadatanLuar($data->kepadatan);
+            // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
+            $intensitas = keanggotaanIntensitasLuar($data->intensitas_kecelakaan);
+        }
         // // ----------------------------------Min-Max ---------------------------------- //
         $Maxjam_kecelakaan = max($jam['jam_kecelakaanA'], $jam['jam_kecelakaanB'], $jam['jam_kecelakaanC'], $jam['jam_kecelakaanD']);
         $Maxkepadatan = max($kepadatanKec['kepadatanA'], $kepadatanKec['kepadatanB'], $kepadatanKec['kepadatanC']);
@@ -79,8 +81,9 @@ class DaerahRawanController extends Controller
         ]);
     }
 
-    public function destroy(Lokasi $lokasi)
+    public function delete(Lokasi $lokasi)
     {
+        // dd($lokasi);
         $lokasi->delete();
         if ($lokasi) {
             return redirect()
@@ -95,7 +98,5 @@ class DaerahRawanController extends Controller
                     'error' => 'Some problem has occurred, please try again',
                 ]);
         }
-        // return redirect('/jalan');
     }
-
 }

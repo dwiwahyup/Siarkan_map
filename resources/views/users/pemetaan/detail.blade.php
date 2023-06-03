@@ -23,7 +23,7 @@
                             <a href="{{ URL::previous() }}" class="m-1 p-1">
                                 <p><i class="uil uil-angle-left"></i> Kembali</p>
                             </a>
-                            <div class="card-body pt-0">
+                            <div class="card-body py-0">
                                 <div class="d-flex justify-content-end">
                                     <a href="https://www.google.com/maps/?t=k&q={{ $data->latitude . ',' . $data->longitude }}"
                                         target="_blank" class="btn btn-outline-danger btn-sm">
@@ -40,7 +40,7 @@
                                                 <tr>
                                                     <th scope="row">Nama Jalan</th>
                                                     <td>:</td>
-                                                    <td class="text-right">{{ $data->nama_jalan }}</td>
+                                                    <td class="text-right">{{ $data->jalan->nama_jalan }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">Alamat</th>
@@ -85,7 +85,7 @@
                                             </table>
                                         </div>
                                         <hr class="pt-0 mt-0">
-                                        <div class="row">
+                                        <div class="row pt-3">
                                             <div class="col-lg-6 text-end pt-3">
                                                 <p>Tingkat Kerawanan</p>
                                             </div>

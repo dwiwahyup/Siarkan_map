@@ -58,7 +58,7 @@
                         <tbody>
                             @foreach ($data as $lokasi)
                                 <tr>
-                                    <td>{{ $lokasi->nama_jalan }}</td>
+                                    <td>{{ $lokasi->jalan->nama_jalan }}</td>
                                     <td>{{ $lokasi->alamat }}</td>
                                     <td>
                                         @if ($lokasi->tingkat_kerawanan == 'Tidak Rawan')
@@ -98,79 +98,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-
     <script>
-        $(document).ready(function() {
-            $('a[data-bs-toggle="modal"]').on('click', function() {
-                var modal = $($(this).data('bs-target'));
-                var detailUrl = '{{ route('detail', ':id') }}';
-                var dataContainer = $('#data-container');
-
-                // Retrieve the ID from the link or any other source
-                var id = 'your_data_id';
-                detailUrl = detailUrl.replace(':id', id);
-
-                $.ajax({
-                    url: detailUrl,
-                    method: 'GET',
-                    success: function(response) {
-                        // Update the modal fields with the retrieved data
-                        $('#nama_jalan').text(response.nama_jalan);
-                        $('#alamat').text(response.alamat);
-                        $('#lattitude').text(response.lattitude);
-                        $('#longitude').text(response.longitude);
-                        $('#jam_kecelakaan').text(response.jam_kecelakaan);
-                        $('#kepadatan').text(response.kepadatan);
-                        $('#indensitas_kecelakaan').text(response.indensitas_kecelakaan);
-                        $('#kondisi_korban').text(response.kondisi_korban);
-
-                        // Open the modal
-                        modal.modal('show');
-                    },
-                    error: function(xhr) {
-                        // Handle error if the request fails
-                    }
-                });
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('a[data-bs-toggle="modal"]').on('click', function() {
-                var modal = $($(this).data('bs-target'));
-                var detailUrl = '{{ route('detail', ':id') }}';
-                var dataContainer = $('#data-container');
-
-                // Retrieve the ID from the link or any other source
-                var id = 'your_data_id';
-                detailUrl = detailUrl.replace(':id', id);
-
-                $.ajax({
-                    url: detailUrl,
-                    method: 'GET',
-                    success: function(response) {
-                        // Update the modal fields with the retrieved data
-                        $('#nama_jalan').text(response.nama_jalan);
-                        $('#alamat').text(response.alamat);
-                        $('#lattitude').text(response.lattitude);
-                        $('#longitude').text(response.longitude);
-                        $('#jam_kecelakaan').text(response.jam_kecelakaan);
-                        $('#kepadatan').text(response.kepadatan);
-                        $('#indensitas_kecelakaan').text(response.indensitas_kecelakaan);
-                        $('#kondisi_korban').text(response.kondisi_korban);
-
-                        // Open the modal
-                        modal.modal('show');
-                    },
-                    error: function(xhr) {
-                        // Handle error if the request fails
-                    }
-                });
-            });
-        });
-
-
         $(document).ready(function() {
             $('#example').DataTable();
         });

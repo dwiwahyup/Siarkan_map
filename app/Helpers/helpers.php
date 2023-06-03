@@ -61,40 +61,41 @@ if (!function_exists('keanggotaanJam')) {
     }
 }
 
-if (!function_exists('keanggotaanKepadatan')) {
-    function keanggotaanKepadatan($kepadatan)
+//kepadatan Dalam
+if (!function_exists('keanggotaanKepadatanDalam')) {
+    function keanggotaanKepadatanDalam($kepadatan)
     {
         $kepadatanA = $kepadatanB = $kepadatanC = 0;
-        if ($kepadatan <= 7388) {
-            if ($kepadatan <= 6000) {
+        if ($kepadatan <= 6867) {
+            if ($kepadatan <= 6688) {
                 $kepadatanA = 1;
-            } elseif ($kepadatan > 6000 && $kepadatan < 7388) {
-                $kepadatanA = (7388 - $kepadatan) / (7388 - 6000);
-            } elseif ($kepadatan >= 7388) {
+            } elseif ($kepadatan > 6688 && $kepadatan < 6867) {
+                $kepadatanA = (6867 - $kepadatan) / (6867 - 6688);
+            } elseif ($kepadatan >= 6867) {
                 $kepadatanA = 0;
             }
             $kepadatanRule = 'Tidak Padat';
         }
 
-        if ($kepadatan >= 7388 && $kepadatan < 9289) {
-            if ($kepadatan > 7388 && $kepadatan < 8338) {
-                $kepadatanB = ($kepadatan - 7388) / (8338 - 7388);
-            } elseif ($kepadatan > 8338 && $kepadatan < 9289) {
-                $kepadatanB = (9289 - $kepadatan) / (9289 - 8338);
-            } elseif ($kepadatan == 8338) {
+        if ($kepadatan >= 6867 && $kepadatan < 7225) {
+            if ($kepadatan > 6867 && $kepadatan < 7046) {
+                $kepadatanB = ($kepadatan - 6867) / (7046 - 6867);
+            } elseif ($kepadatan > 7046 && $kepadatan < 7225) {
+                $kepadatanB = (7225 - $kepadatan) / (7225 - 7046);
+            } elseif ($kepadatan == 7046) {
                 $kepadatanB = 1;
-            } elseif ($kepadatan <= 7388 && $kepadatan >= 9289) {
+            } elseif ($kepadatan <= 6867 && $kepadatan >= 7225) {
                 $kepadatanB = 0;
             }
             $kepadatanRule = 'Ramai';
         }
 
-        if ($kepadatan >= 9289 && $kepadatan < 11190) {
-            if ($kepadatan >= 9289 && $kepadatan < 11190) {
-                $kepadatanC = ($kepadatan - 9289) / (11190 - 9289);
-            } elseif ($kepadatan >= 11190) {
+        if ($kepadatan >= 7225 && $kepadatan < 7405) {
+            if ($kepadatan >= 7225 && $kepadatan < 7405) {
+                $kepadatanC = ($kepadatan - 7225) / (7405 - 7225);
+            } elseif ($kepadatan >= 7405) {
                 $kepadatanC = 1;
-            } elseif ($kepadatan <= 9289) {
+            } elseif ($kepadatan <= 7225) {
                 $kepadatanC = 0;
             }
             $kepadatanRule = 'Padat';
@@ -109,40 +110,139 @@ if (!function_exists('keanggotaanKepadatan')) {
     }
 }
 
-if (!function_exists('keanggotaanIntensitas')) {
-    function keanggotaanIntensitas($intensitas_kecelakaan)
+//intensitas Dalam
+if (!function_exists('keanggotaanIntensitasDalam')) {
+    function keanggotaanIntensitasDalam($intensitas_kecelakaan)
     {
         $intensitas_kecelakaanA = $intensitas_kecelakaanB = $intensitas_kecelakaanC = 0;
-        if ($intensitas_kecelakaan <= 21) {
-            if ($intensitas_kecelakaan <= 10) {
+        if ($intensitas_kecelakaan <= 670) {
+            if ($intensitas_kecelakaan <= 654) {
                 $intensitas_kecelakaanA = 1;
-            } elseif ($intensitas_kecelakaan > 10 && $intensitas_kecelakaan < 21) {
-                $intensitas_kecelakaanA = (21 - $intensitas_kecelakaan) / (21 - 10);
-            } elseif ($intensitas_kecelakaan >= 21) {
+            } elseif ($intensitas_kecelakaan > 654 && $intensitas_kecelakaan < 670) {
+                $intensitas_kecelakaanA = (670 - $intensitas_kecelakaan) / (670 - 654);
+            } elseif ($intensitas_kecelakaan >= 670) {
                 $intensitas_kecelakaanA = 0;
             }
             $intensitas_kecelakaanRule = 'Sangat Jarang';
         }
 
-        if ($intensitas_kecelakaan >= 21 && $intensitas_kecelakaan < 42) {
-            if ($intensitas_kecelakaan > 21 && $intensitas_kecelakaan < 31) {
-                $intensitas_kecelakaanB = ($intensitas_kecelakaan - 21) / (31 - 21);
-            } elseif ($intensitas_kecelakaan > 31 && $intensitas_kecelakaan < 42) {
-                $intensitas_kecelakaanB = (42 - $intensitas_kecelakaan) / (42 - 31);
-            } elseif ($intensitas_kecelakaan == 31) {
+        if ($intensitas_kecelakaan >= 670 && $intensitas_kecelakaan < 705) {
+            if ($intensitas_kecelakaan > 670 && $intensitas_kecelakaan < 689) {
+                $intensitas_kecelakaanB = ($intensitas_kecelakaan - 670) / (689 - 670);
+            } elseif ($intensitas_kecelakaan > 689 && $intensitas_kecelakaan < 705) {
+                $intensitas_kecelakaanB = (705 - $intensitas_kecelakaan) / (705 - 689);
+            } elseif ($intensitas_kecelakaan == 689) {
                 $intensitas_kecelakaanB = 1;
-            } elseif ($intensitas_kecelakaan <= 21 && $intensitas_kecelakaan >= 42) {
+            } elseif ($intensitas_kecelakaan <= 670 && $intensitas_kecelakaan >= 705) {
                 $intensitas_kecelakaanB = 0;
             }
             $intensitas_kecelakaanRule = 'Jarang';
         }
 
-        if ($intensitas_kecelakaan >= 42 && $intensitas_kecelakaan <= 64) {
-            if ($intensitas_kecelakaan >= 42 && $intensitas_kecelakaan < 64) {
-                $intensitas_kecelakaanC = ($intensitas_kecelakaan - 42) / (64 - 42);
-            } elseif ($intensitas_kecelakaan >= 64) {
+        if ($intensitas_kecelakaan >= 705 && $intensitas_kecelakaan <= 724) {
+            if ($intensitas_kecelakaan >= 705 && $intensitas_kecelakaan < 724) {
+                $intensitas_kecelakaanC = ($intensitas_kecelakaan - 705) / (724 - 705);
+            } elseif ($intensitas_kecelakaan >= 724) {
                 $intensitas_kecelakaanC = 1;
-            } elseif ($intensitas_kecelakaan <= 42) {
+            } elseif ($intensitas_kecelakaan <= 705) {
+                $intensitas_kecelakaanC = 0;
+            }
+            $intensitas_kecelakaanRule = 'Sering';
+        }
+
+        return [
+            'intensitas_kecelakaanA' => $intensitas_kecelakaanA,
+            'intensitas_kecelakaanB' => $intensitas_kecelakaanB,
+            'intensitas_kecelakaanC' => $intensitas_kecelakaanC,
+            'intensitas_kecelakaanRule' => $intensitas_kecelakaanRule
+        ];
+    }
+}
+
+//kepadatan luar
+if (!function_exists('keanggotaanKepadatanLuar')) {
+    function keanggotaanKepadatanLuar($kepadatan)
+    {
+        $kepadatanA = $kepadatanB = $kepadatanC = 0;
+        if ($kepadatan <= 6000) {
+            if ($kepadatan <= 5563) {
+                $kepadatanA = 1;
+            } elseif ($kepadatan > 5563 && $kepadatan < 6000) {
+                $kepadatanA = (6000 - $kepadatan) / (6000 - 5563);
+            } elseif ($kepadatan >= 6000) {
+                $kepadatanA = 0;
+            }
+            $kepadatanRule = 'Tidak Padat';
+        }
+
+        if ($kepadatan >= 6000 && $kepadatan < 6500) {
+            if ($kepadatan > 6000 && $kepadatan < 6250) {
+                $kepadatanB = ($kepadatan - 6000) / (6250 - 6000);
+            } elseif ($kepadatan > 6250 && $kepadatan < 6500) {
+                $kepadatanB = (6500 - $kepadatan) / (6500 - 6250);
+            } elseif ($kepadatan == 6250) {
+                $kepadatanB = 1;
+            } elseif ($kepadatan <= 6000 && $kepadatan >= 6500) {
+                $kepadatanB = 0;
+            }
+            $kepadatanRule = 'Ramai';
+        }
+
+        if ($kepadatan >= 6500 && $kepadatan < 6862) {
+            if ($kepadatan >= 6500 && $kepadatan < 6862) {
+                $kepadatanC = ($kepadatan - 6500) / (6862 - 6500);
+            } elseif ($kepadatan >= 6862) {
+                $kepadatanC = 1;
+            } elseif ($kepadatan <= 6500) {
+                $kepadatanC = 0;
+            }
+            $kepadatanRule = 'Padat';
+        }
+
+        return [
+            'kepadatanA' => $kepadatanA,
+            'kepadatanB' => $kepadatanB,
+            'kepadatanC' => $kepadatanC,
+            'kepadatanRule' => $kepadatanRule
+        ];
+    }
+}
+
+//intensitas Luar
+if (!function_exists('keanggotaanIntensitasLuar')) {
+    function keanggotaanIntensitasLuar($intensitas_kecelakaan)
+    {
+        $intensitas_kecelakaanA = $intensitas_kecelakaanB = $intensitas_kecelakaanC = 0;
+        if ($intensitas_kecelakaan <= 57) {
+            if ($intensitas_kecelakaan <= 55) {
+                $intensitas_kecelakaanA = 1;
+            } elseif ($intensitas_kecelakaan > 55 && $intensitas_kecelakaan < 57) {
+                $intensitas_kecelakaanA = (57 - $intensitas_kecelakaan) / (57 - 55);
+            } elseif ($intensitas_kecelakaan >= 57) {
+                $intensitas_kecelakaanA = 0;
+            }
+            $intensitas_kecelakaanRule = 'Sangat Jarang';
+        }
+
+        if ($intensitas_kecelakaan >= 57 && $intensitas_kecelakaan < 63) {
+            if ($intensitas_kecelakaan > 57 && $intensitas_kecelakaan < 61) {
+                $intensitas_kecelakaanB = ($intensitas_kecelakaan - 57) / (61 - 57);
+            } elseif ($intensitas_kecelakaan > 61 && $intensitas_kecelakaan < 63) {
+                $intensitas_kecelakaanB = (63 - $intensitas_kecelakaan) / (63 - 61);
+            } elseif ($intensitas_kecelakaan == 61) {
+                $intensitas_kecelakaanB = 1;
+            } elseif ($intensitas_kecelakaan <= 57 && $intensitas_kecelakaan >= 63) {
+                $intensitas_kecelakaanB = 0;
+            }
+            $intensitas_kecelakaanRule = 'Jarang';
+        }
+
+        if ($intensitas_kecelakaan >= 63 && $intensitas_kecelakaan <= 67) {
+            if ($intensitas_kecelakaan >= 63 && $intensitas_kecelakaan < 67) {
+                $intensitas_kecelakaanC = ($intensitas_kecelakaan - 63) / (67 - 63);
+            } elseif ($intensitas_kecelakaan >= 67) {
+                $intensitas_kecelakaanC = 1;
+            } elseif ($intensitas_kecelakaan <= 63) {
                 $intensitas_kecelakaanC = 0;
             }
             $intensitas_kecelakaanRule = 'Sering';

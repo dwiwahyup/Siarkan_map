@@ -45,18 +45,10 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="mb-3">
-                                        <label for="simpleinput" class="form-label" >Panjang Jalan (KM)</label>
-                                        <input type="text" id="simpleinput" class="form-control" name="panjang_jalan" required>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
                                         <label for="example-select" class="form-label">Status Jalan</label>
                                         <select class="form-select" id="example-select" name="status_jalan" required>
-                                            <option>Jalan Nasional</option>
-                                            <option>Jalan Provinsi</option>
-                                            <option>Jalan Kabupaten</option>
+                                            <option value="Luar Kota">Jalan Luar Kota</option>
+                                            <option value="Dalam Kota">Jalan Dalam Kota</option>
                                         </select>
                                     </div>
                                 </div>

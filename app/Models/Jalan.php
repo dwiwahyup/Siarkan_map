@@ -11,7 +11,7 @@ class Jalan extends Model
     use HasFactory, Sluggable;
 
     protected $fillable = [
-        'slug', 'nama_jalan', 'panjang_jalan', 'status_jalan'
+        'slug', 'nama_jalan', 'status_jalan'
     ];
     public function sluggable(): array
     {

@@ -26,7 +26,7 @@
                                 <div class="row gx-md-8 gx-xl-12 gy-10 align-items-center">
                                     <div class="col-md-8 col-lg-6 offset-lg-0 col-xl-5 offset-xl-1 position-relative">
                                         <div class="shape bg-dot primary rellax w-17 h-21" data-rellax-speed="1" style="top: -2rem; left: -1.4rem;"></div>
-                                        <figure class="rounded"><img src="{{url('assets/users/img/photos/about4.jpg')}}" srcset="./assets/img/photos/about4@2x.jpg 2x" alt=""></figure>
+                                        <figure class="rounded"><img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1680692610/Technical%20Project%20Assignment%20%28TPA%29/IMG_3319_mltbon.jpg" srcset="./assets/img/photos/about4@2x.jpg 2x" alt=""></figure>
                                     </div>
 
                                     <div class="col-lg-6">

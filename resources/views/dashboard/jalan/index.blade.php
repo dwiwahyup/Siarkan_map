@@ -41,7 +41,6 @@
                                 <thead>
                                     <tr>
                                         <th>Nama Jalan</th>
-                                        <th>Panjang Jalan</th>
                                         <th>Status Jalan</th>
                                         <th style="text-align: center;">Action</th>
                                     </tr>
@@ -50,7 +49,6 @@
                                     @foreach ($data as $data)
                                         <tr>
                                             <td>{{ $data->nama_jalan }}</td>
-                                            <td>{{ $data->panjang_jalan }}</td>
                                             <td>{{ $data->status_jalan }}</td>
                                             <td style="text-align: center;">
                                                 <a href="{{ route('jalan.edit', $data->slug) }}"
@@ -89,18 +87,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-
-
-
-
-
-
-
-
-                                                <a href="{{ route('jalan.aruslantas.index', $data->slug) }}"
-                                                    class="btn btn-info">Arus</a>
+                                                <!-- <a href="{{ route('jalan.aruslantas.index', $data->slug) }}"
+                                                    class="btn btn-info">Arus</a> -->
                                             </td>
                                         </tr>
                                     @endforeach
@@ -108,7 +96,6 @@
                                 <tfoot>
                                     <tr>
                                         <th>Nama Jalan</th>
-                                        <th>Panjang Jalan</th>
                                         <th>Status Jalan</th>
                                         <th>Action</th>
                                     </tr>

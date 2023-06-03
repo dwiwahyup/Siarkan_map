@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jalan;
 use App\Models\Lokasi;
 use App\Models\Rules;
 use Illuminate\Http\Request;
@@ -18,18 +19,28 @@ class FuzzyController extends Controller
         $kepadatan = $request->kepadatan;
         $intensitas_kecelakaan = $request->intensitas_kecelakaan;
         $kondisi_korban = $request->kondisi_korban;
+        $jalan_id = $request->nama_jalan;
+        // dd($intensitas_kecelakaan);
+
+        $jalan = Jalan::find($jalan_id);
 
         // ----------------------------------Jam Kecelakaan---------------------------------- //
         $jam = keanggotaanJam($jam_kecelakaan);
-
-        // ----------------------------------Kepadatan ---------------------------------- //
-        $kepadatanKec = keanggotaanKepadatan($kepadatan);
-
-        // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
-        $intensitas = KeanggotaanIntensitas($intensitas_kecelakaan);
-
         // ----------------------------------Kondisi Korban ---------------------------------- //
         $kondisiKorban = keanggotaanKondisiKorban($kondisi_korban);
+        if ($jalan->status_jalan == 'Dalam Kota') {
+            // ----------------------------------Kepadatan ---------------------------------- //
+            $kepadatanKec = keanggotaanKepadatanDalam($kepadatan);
+
+            // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
+            $intensitas = keanggotaanIntensitasDalam($intensitas_kecelakaan);
+        } elseif ($jalan->status_jalan == 'Luar Kota') {
+            // ----------------------------------Kepadatan ---------------------------------- //
+            $kepadatanKec = keanggotaanKepadatanLuar($kepadatan);
+
+            // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
+            $intensitas = keanggotaanIntensitasLuar($intensitas_kecelakaan);
+        }
 
         // // ----------------------------------Min-Max ---------------------------------- //
         // $Maxjam_kecelakaan = max($jam['jam_kecelakaanA'], $jam['jam_kecelakaanB'], $jam['jam_kecelakaanC'], $jam['jam_kecelakaanD']);
@@ -52,8 +63,8 @@ class FuzzyController extends Controller
         // ---------------------------------- Defuzzyfikasi ---------------------------------- //
         // $deffuzy = $luasMoment['totalMoment'] / $luasMoment['totalLuas'];
 
-        $lokasi = Lokasi::create([
-            'nama_jalan' => $request->nama_jalan,
+        Lokasi::create([
+            'jalan_id' => $jalan_id,
             'alamat' => $request->alamat,
             'latitude' => $request->lattitude,
             'longitude' => $request->longitude,
@@ -72,6 +83,5 @@ class FuzzyController extends Controller
         } else {
             return redirect()->route('pemetaan')->with('success', 'Data Berhasil Ditambahkan');
         }
-
     }
 }
