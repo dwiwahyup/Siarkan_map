@@ -56,6 +56,11 @@
                     <i class="ri-fullscreen-line font-22"></i>
                 </a>
             </li>
+            <li class="d-none d-md-inline-block">
+                <a href="{{ url('/') }}" class="nav-link">
+                    <i class="ri-home-4-line font-22"></i>
+                </a>                
+            </li>
 
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle arrow-none nav-user px-2" data-bs-toggle="dropdown" href="#"
