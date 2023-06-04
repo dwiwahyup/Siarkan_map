@@ -7,9 +7,9 @@
                 <div class="page-title-left">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Data Rules</li>
+                        <li class="breadcrumb-item active">Data User</li>
                     </ol>
-                    <h4 class="Header-title">Data Ruless</h4>
+                    <h4 class="Header-title">Data User</h4>
                 </div>
             </div>
         </div>
@@ -19,9 +19,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="">
-                        <p><a href="rules/create" class="btn btn-secondary"> Tambah Rules</a></p>
-                    </div>
+                    <!-- <div class="">
+                        <p><a href="jalan/create" class="btn btn-secondary"> Tambah Data Jalan</a></p>
+                    </div> -->
                     @if (session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
@@ -37,41 +37,31 @@
 
                     <div class="tab-content">
                         <div class="tab-pane show active" id="alt-pagination-preview">
-                            <table id="alternative-page-datatable"
-                                class="table table-striped dt-responsive nowrap w-100 text-center">
+                            <table id="alternative-page-datatable" class="table table-striped dt-responsive nowrap w-100">
                                 <thead>
                                     <tr>
-                                        <th>ID Rules</th>
-                                        <th>Jam Kecelakaan</th>
-                                        <th>Kepadatan Kendaraan</th>
-                                        <th>Intensitas Kecelakaan</th>
-                                        <th>Kondisi Korban</th>
-                                        <th>Tingkat Kerawanan</th>
-                                        <th>Action</th>
+                                        <th>Nama Jalan</th>
+                                        <th>Status Jalan</th>
+                                        <th>Role</th>
+                                        <th style="text-align: center;">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($rules as $rule)
+                                    @foreach ($data as $data)
                                         <tr>
-                                            <td> Rules {{ $rule->id }}</td>
-                                            <td>{{ $rule->jam }}</td>
-                                            <td>{{ $rule->kepadatan }}</td>
-                                            <td>{{ $rule->intensitas }}</td>
-                                            <td>{{ $rule->kondisi_korban }}</td>
-                                            <td
-                                                style="color:
-                                                    @if ($rule->tingkat_kerawanan == 'Sangat Rawan') red;
-                                                    @elseif($rule->tingkat_kerawanan == 'Rawan') orange;
-                                                    @else green; @endif">
-                                                {{ $rule->tingkat_kerawanan }}
-                                            </td>
-                                            <td>
-                                            <a href="{{ route('rules.edit', $rule->id) }}"
+                                            <td>{{ $data->name }}</td>
+                                            <td>{{ $data->email }}</td>
+                                            <td>{{ $data->role}}</td>
+                                            <td style="text-align: center;">
+                                            <a href="{{ route('user.edit', $data->id) }}"
                                                     class="btn btn-success btn-md ml-1">Edit</a>
 
                                                 <button type="button" class="btn btn-danger ml-1" data-bs-toggle="modal"
                                                     data-bs-target="#warning-alert-modal">Delete
                                                 </button>
+
+
+
                                                 <div id="warning-alert-modal" class="modal fade" tabindex="-1"
                                                     role="dialog" aria-hidden="true">
                                                     <div class="modal-dialog modal-sm">
@@ -87,12 +77,13 @@
                                                                             Data akan terhapus dari database
                                                                         </p>
                                                                     </div>
-                                                                    <form action="{{ route('rules.destroy', $rule->id) }}"
+                                                                    <form action="{{ route('user.destroy', $data->id) }}"
                                                                         class="d-inline" method="POST">
                                                                         {{ csrf_field() }}
                                                                         {{ method_field('delete') }}
                                                                         <button class="btn btn-danger ml-1">Delete</button>
                                                                     </form>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -103,21 +94,18 @@
                                     @endforeach
                                 </tbody>
                                 <tfoot>
-                                    <tr>
-                                        <th>ID Rules</th>
-                                        <th>Jam Kecelakaan</th>
-                                        <th>Kepadatan Kendaraan</th>
-                                        <th>Intensitas Kecelakaan</th>
-                                        <th>Kondisi Korban</th>
-                                        <th>Tingkat Kerawanan</th>
-                                        <th>Action</th>
+                                    <tr class="">
+                                        <th>Nama Jalan</th>
+                                        <th>Status Jalan</th>
+                                        <th>Role</th>
+                                        <th style="text-align: center;">Action</th>
                                     </tr>
                                 </tfoot>
                             </table>
-                        </div> <!-- end preview-->
-                    </div> <!-- end tab-content-->
-                </div> <!-- end card body-->
-            </div> <!-- end card -->
-        </div><!-- end col-->
+                        </div> 
+                    </div>
+                </div>
+            </div> 
+        </div>
     </div>
 @endsection

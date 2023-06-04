@@ -9,6 +9,7 @@ use App\Http\Controllers\JalanController;
 use App\Http\Controllers\KecelakaanController;
 use App\Http\Controllers\PemetaaanUserController;
 use App\Http\Controllers\RulesController;
+use App\Http\Controllers\UserController;
 use App\Models\ArusLantas;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,7 @@ Route::middleware(['auth', 'verified'])
     ->group(function () {
         Route::middleware(['Admin'])->group(function () {
             route::get('/', [DashboardController::class, 'index']);
+            Route::resource('user', UserController::class);
             Route::resource('jalan', JalanController::class);
             Route::resource('kecelakaan', KecelakaanController::class);
             Route::resource('jalan.aruslantas', ArusLantasController::class);

@@ -132,7 +132,7 @@
                 })
             }).addTo(map);
 
-            var popupContent = "<b>{{ $lokasi->nama_jalan }}</b><br>{{ $lokasi->alamat }}";
+            var popupContent = "<b>{{ $lokasi->jalan->nama_jalan }}</b><br>{{ $lokasi->alamat }}";
             marker.bindPopup(popupContent).openPopup();
         @endforeach
     </script>

@@ -63,8 +63,8 @@ class JalanController extends Controller
     public function update(Request $request, Jalan $jalan)
     {
         $this->validate($request, [
-            'nama_jalan' => 'required',
-            'status_jalan' => 'required',
+            'name' => 'required',
+            'email' => 'required',
         ]);
 
         //insert to table
