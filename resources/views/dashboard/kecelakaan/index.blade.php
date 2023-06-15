@@ -59,10 +59,9 @@
                                     <td><center>{{$data->korban_lb}}</center></td>
                                     <td><center>{{$data->korban_lr}}</center></td>
                                     <td>
-                                        <a href="{{route('kecelakaan.edit', $data->slug)}}"
-                                            class="btn btn-success btn-md ml-1">Edit</a>
-                                        <form action="{{route('kecelakaan.destroy', $data->id)}}" class="d-inline"
-                                            method="POST">
+                                       
+                                    <a href="{{route('jalan.kecelakaan.edit', ['jalan' => $data->jalan->slug, 'kecelakaan' => $data->slug])}}" class="btn btn-success btn-md ml-1">Edit</a>
+                                        <form action="{{route('jalan.kecelakaan.destroy', ['jalan' => $data->jalan->id, 'kecelakaan' => $data->id])}}" class="d-inline" method="POST">
                                             {{ csrf_field() }}
                                             {{method_field('delete')}}
                                             <button class="btn btn-danger ml-1">Delete</button>

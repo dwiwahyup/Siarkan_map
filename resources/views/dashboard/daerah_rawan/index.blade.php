@@ -47,15 +47,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data as $lokasi)
+                            @foreach ($data->sortByDesc('created_at') as $lokasi)
                                 <tr>
                                     <td>{{ $lokasi->jalan->nama_jalan }}</td>
                                     <td>{{ $lokasi->alamat }}</td>
                                     <td>{{ $lokasi->tingkat_kerawanan }}</td>
                                     <td>
                                         <a href="{{ route('daerahrawan.show', $lokasi->id) }}" type="button" class="btn btn-outline-info"><i class="mdi mdi-eye"></i></a>
-                                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#warning-alert-modal"><i class="mdi mdi-window-close"></i>
-                                        </button>
+                                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#warning-alert-modal"><i class="mdi mdi-window-close"></i></button>
                                         <div id="warning-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-sm">
                                                 <div class="modal-content">
@@ -64,18 +63,12 @@
                                                             <i class="ri-alert-line h1 text-warning"></i>
                                                             <h4 class="mt-2">Hapus Data</h4>
                                                             <div class="text-center">
-                                                                <p class="mt-3">Anda yakin menghapus
-                                                                    data?
-                                                                    <br>
-                                                                    Data akan terhapus dari database
-                                                                </p>
+                                                                <p class="mt-3">Anda yakin menghapus data?<br>Data akan terhapus dari database</p>
                                                             </div>
                                                             <form action="{{ route('daerahrawan.delete', $lokasi->id) }}" method="POST">
                                                                 @csrf
-                                                                <button type="submit" class="btn btn-warning btn-sm">Hapus
-                                                                    Data</button>
+                                                                <button type="submit" class="btn btn-warning btn-sm">Hapus Data</button>
                                                             </form>
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -83,7 +76,8 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @endforeach
+                            @endforeach
+
                             </tbody>
                             <tfoot>
                                 <tr>

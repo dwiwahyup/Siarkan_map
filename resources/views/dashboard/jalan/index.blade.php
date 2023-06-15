@@ -89,6 +89,9 @@
                                                 </div>
                                                 <!-- <a href="{{ route('jalan.aruslantas.index', $data->slug) }}"
                                                     class="btn btn-info">Arus</a> -->
+                                                <a href="{{route('jalan.kecelakaan.index', $data->slug) }}" class="btn btn-info">
+                                                    Kecelakaan
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach

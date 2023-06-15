@@ -26,4 +26,9 @@ class Jalan extends Model
     {
         return $this->hasMany(ArusLantas::class, 'jalans_id', 'id');
     }
+
+    public function kecelakaan()
+    {
+        return $this->hasMany(Kecelakaan::class, 'jalans_id', 'id');
+    }
 }

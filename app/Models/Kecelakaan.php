@@ -21,4 +21,9 @@ class Kecelakaan extends Model
             ]
             ];
     }
+
+    public function jalan()
+    {
+        return $this->belongsTo(Jalan::class, 'jalans_id', 'id');
+    }
 }

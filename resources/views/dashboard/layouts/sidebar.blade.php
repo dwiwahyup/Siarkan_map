@@ -59,13 +59,7 @@
                     <span> Data Jalan </span>
                 </a>
             </li>
-
-            <!-- <li class="side-nav-item">
-                <a href="{{'/dashboard/kecelakaan'}}" class="side-nav-link">
-                    <i class="uil-comments-alt"></i>
-                    <span> Data Kecelakaan </span>
-                </a>
-            </li> -->
+            
             <li class="side-nav-item">
                 <a href="{{'/dashboard/rules'}}" class="side-nav-link">
                     <i class="uil-clipboard-notes"></i>
@@ -80,7 +74,6 @@
             </li>
 
         </ul>
-        <!--- End Sidemenu -->
 
         <div class="clearfix"></div>
     </div>

@@ -16,7 +16,7 @@ class ArusLantasController extends Controller
         // dd($jalan);
 
         $data = ArusLantas::with('jalan')->where('id', $jalan->id)->get();
-        // dd($data);
+        dd($data);
         return view('dashboard.arus_lantas.index', ['data' => $data]);
     }
 
@@ -43,7 +43,6 @@ class ArusLantasController extends Controller
             'total_2_arah' => 'required',
         ]);
 
-        // $nama_jalan = Jalan::where('id', $request->jalans_id)->first()->nama_jalan;
 
         $data = $request->all();
         $data['nama_jalan'] = $jalan->nama_jalan;
@@ -74,12 +73,7 @@ class ArusLantasController extends Controller
         $jalan = Jalan::where('slug', $jalan)->first();
         $aruslanta = ArusLantas::where('slug', $aruslanta)->first();
 
-        // $data = DB::table('arus_lantas')->where('slug', $slug)->first();
-        // $jalan = Jalan::all();
-
-        return view('dashboard.arus_lantas.edit', ['jalan' => $jalan, 'aruslantas' => $aruslanta]);
-
-        // return view('dashboard.arus_lantas.edit', ['data' => $data], ['dataa' => $jalan]);
+        return view('dashboard.arus_lantas.edit', ['jalan' => $jalan, 'aruslantas' => $aruslanta]); 
     }
 
     public function update(Request $request, Jalan $jalan, ArusLantas $aruslanta)

@@ -52,7 +52,7 @@ Route::middleware(['auth', 'verified'])
             route::get('/', [DashboardController::class, 'index']);
             Route::resource('user', UserController::class);
             Route::resource('jalan', JalanController::class);
-            Route::resource('kecelakaan', KecelakaanController::class);
+            Route::resource('jalan.kecelakaan', KecelakaanController::class);
             Route::resource('jalan.aruslantas', ArusLantasController::class);
             //rules
             Route::resource('rules', RulesController::class);

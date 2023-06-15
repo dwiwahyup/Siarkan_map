@@ -63,14 +63,15 @@ class JalanController extends Controller
     public function update(Request $request, Jalan $jalan)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
+            'nama_jalan' => 'required',
+            'status_jalan' => 'required',
         ]);
 
         //insert to table
         $data = $request->all();
         $data['slug'] = Slugservice::createslug(Jalan::class, 'slug', $request->nama_jalan);
         $jalan->update($data);
+        // dd($jalan);
 
         // dd ($data);
         if ($data) {

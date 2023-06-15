@@ -49,8 +49,8 @@
                                         <label for="example-select" class="form-label">Status Jalan</label>
                                         <select class="form-select" id="example-select" name="status_jalan">
                                             <option>{{old('status_jalan') ?? $data->status_jalan}}</option>
-                                            <option>Jalan Luar Kota</option>
-                                            <option>Jalan Dalam Kota</option>
+                                            <option value="Luar Kota">Luar Kota</option>
+                                            <option valus="Dalam Kota">Dalam Kota</option>
                                         </select>
                                     </div>
                                 </div>

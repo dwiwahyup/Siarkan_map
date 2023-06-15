@@ -40,20 +40,23 @@ class DaerahRawanController extends Controller
             // ----------------------------------Intensitas Kecelakaan ---------------------------------- //
             $intensitas = keanggotaanIntensitasLuar($data->intensitas_kecelakaan);
         }
+
+        // dd($intensitas);
         // // ----------------------------------Min-Max ---------------------------------- //
         $Maxjam_kecelakaan = max($jam['jam_kecelakaanA'], $jam['jam_kecelakaanB'], $jam['jam_kecelakaanC'], $jam['jam_kecelakaanD']);
         $Maxkepadatan = max($kepadatanKec['kepadatanA'], $kepadatanKec['kepadatanB'], $kepadatanKec['kepadatanC']);
         $Maxintensitas_kecelakaan = max($intensitas['intensitas_kecelakaanA'], $intensitas['intensitas_kecelakaanB'], $intensitas['intensitas_kecelakaanC']);
         $Maxkondisi_korban = max($kondisiKorban['kondisi_korbanA'], $kondisiKorban['kondisi_korbanB'], $kondisiKorban['kondisi_korbanC']);
         $minRule = min($Maxjam_kecelakaan, $Maxkepadatan, $Maxintensitas_kecelakaan, $Maxkondisi_korban);
-
+        // dd($minRule);
 
         // ---------------------------------- Luas dan Moment ---------------------------------- //
         $luasMoment = hitungLuasMoment($data->tingkat_kerawanan, $minRule);
-
+        // dd($luasMoment);
         $luasA1 = $luasMoment['luasA1'];
         $luasA2 = $luasMoment['luasA2'];
         $luasA3 = $luasMoment['luasA3'];
+        // dd($luasA1, $luasA2, $luasA3);
 
         $momentSatu = $luasMoment['momentSatu'];
         $momentDua = $luasMoment['momentDua'];

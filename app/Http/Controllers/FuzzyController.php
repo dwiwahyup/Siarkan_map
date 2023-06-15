@@ -21,7 +21,7 @@ class FuzzyController extends Controller
         $kondisi_korban = $request->kondisi_korban;
         $jalan_id = $request->nama_jalan;
         // dd($intensitas_kecelakaan);
-
+    
         $jalan = Jalan::find($jalan_id);
 
         // ----------------------------------Jam Kecelakaan---------------------------------- //

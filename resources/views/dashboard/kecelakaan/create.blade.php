@@ -34,7 +34,7 @@
             <div class="tab-content">
                 <div class="tab-pane show active" id="input-types-preview">
                     <div class="row">
-                        <form action="{{route('kecelakaan.store')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('jalan.kecelakaan.store', $data->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <h4 class="header-title">Waktu Kejadian</h4>
                             <div class="row g-2">
@@ -54,9 +54,7 @@
                                     <label class="form-label">Nama Jalan</label>
                                     <select class="form-select" name="jalans_id">
                                         <option>Pilih Jalan</option>
-                                        @foreach ($data as $jalan)
-                                        <option value="{{$jalan->id}}">{{$jalan->nama_jalan}}</option>
-                                        @endforeach
+                                        <option value="{{$data->nama_jalan}}">{{$data->nama_jalan}}</option>
                                     </select>
                                 </div>
                                 <div class="mb-3 col-md-3">

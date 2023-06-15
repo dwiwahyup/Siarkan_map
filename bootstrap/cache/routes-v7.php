@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::odRLAeZcjrWEsVAu',
+            '_route' => 'generated::mmANwsbXUfL5PHuA',
           ),
           1 => NULL,
           2 => 
@@ -44,7 +44,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::2CLZkp8Fv8BxqR3w',
+            '_route' => 'generated::npGLEa0IUxS2dAcF',
           ),
           1 => NULL,
           2 => 
@@ -81,7 +81,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::tT2Fw3MMawGoWEXu',
+            '_route' => 'generated::t4GI8ExcEOMx6huK',
           ),
           1 => NULL,
           2 => 
@@ -136,7 +136,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::66KvSEvDAxwY4tyL',
+            '_route' => 'generated::RjLDKQUbwzNymXWU',
           ),
           1 => NULL,
           2 => 
@@ -227,7 +227,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::bysa4CdiqhSrBFhS',
+            '_route' => 'generated::xudGCjfYfbuLdp3x',
           ),
           1 => NULL,
           2 => 
@@ -246,7 +246,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::UKAUrCTPRhtouEEU',
+            '_route' => 'generated::UiiS5djnKylOJoYq',
           ),
           1 => NULL,
           2 => 
@@ -266,7 +266,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::0dIiPG5ZjqTlmpiB',
+            '_route' => 'generated::xaqqkN4eEENgy9vJ',
           ),
           1 => NULL,
           2 => 
@@ -286,7 +286,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::TTDohpWGObiV1MAz',
+            '_route' => 'generated::MU3MI4dhKmX2nWb6',
           ),
           1 => NULL,
           2 => 
@@ -345,7 +345,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::wcGp2iiQvL7EddWO',
+            '_route' => 'generated::0isFv9M97QXIJ2mJ',
           ),
           1 => NULL,
           2 => 
@@ -458,62 +458,6 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'jalan.create',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/dashboard/kecelakaan' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'kecelakaan.index',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'kecelakaan.store',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/dashboard/kecelakaan/create' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'kecelakaan.create',
           ),
           1 => NULL,
           2 => 
@@ -665,7 +609,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::R2rZS5VBWBf8KRfZ',
+            '_route' => 'generated::CFzhIIdBhtlPR6YH',
           ),
           1 => NULL,
           2 => 
@@ -682,7 +626,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/password/reset/([^/]++)(*:31)|/d(?|etail/([^/]++)(*:57)|ashboard/(?|user/([^/]++)(?|(*:92)|/edit(*:104)|(*:112))|jalan/([^/]++)(?|(*:138)|/(?|edit(*:154)|aruslantas(?|(*:175)|/(?|create(*:193)|([^/]++)(?|(*:212)|/edit(*:225)|(*:233)))|(*:243)))|(*:253))|kecelakaan/([^/]++)(?|(*:284)|/edit(*:297)|(*:305))|rules/([^/]++)(?|(*:331)|/edit(*:344)|(*:352))|daerahrawan/(?|([^/]++)(?|(*:387)|/edit(*:400)|(*:408))|delete/([^/]++)(*:432)))))/?$}sDu',
+      0 => '{^(?|/password/reset/([^/]++)(*:31)|/d(?|etail/([^/]++)(*:57)|ashboard/(?|user/([^/]++)(?|(*:92)|/edit(*:104)|(*:112))|jalan/([^/]++)(?|(*:138)|/(?|edit(*:154)|kecelakaan(?|(*:175)|/(?|create(*:193)|([^/]++)(?|(*:212)|/edit(*:225)|(*:233)))|(*:243))|aruslantas(?|(*:265)|/(?|create(*:283)|([^/]++)(?|(*:302)|/edit(*:315)|(*:323)))|(*:333)))|(*:343))|rules/([^/]++)(?|(*:369)|/edit(*:382)|(*:390))|daerahrawan/(?|([^/]++)(?|(*:425)|/edit(*:438)|(*:446))|delete/([^/]++)(*:470)))))/?$}sDu',
     ),
     3 => 
     array (
@@ -872,7 +816,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'jalan.aruslantas.index',
+            '_route' => 'jalan.kecelakaan.index',
           ),
           1 => 
           array (
@@ -895,7 +839,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'jalan.aruslantas.create',
+            '_route' => 'jalan.kecelakaan.create',
           ),
           1 => 
           array (
@@ -913,6 +857,166 @@ app('router')->setCompiledRoutes(
         ),
       ),
       212 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'jalan.kecelakaan.show',
+          ),
+          1 => 
+          array (
+            0 => 'jalan',
+            1 => 'kecelakaan',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      225 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'jalan.kecelakaan.edit',
+          ),
+          1 => 
+          array (
+            0 => 'jalan',
+            1 => 'kecelakaan',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      233 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'jalan.kecelakaan.update',
+          ),
+          1 => 
+          array (
+            0 => 'jalan',
+            1 => 'kecelakaan',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'jalan.kecelakaan.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'jalan',
+            1 => 'kecelakaan',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      243 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'jalan.kecelakaan.store',
+          ),
+          1 => 
+          array (
+            0 => 'jalan',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      265 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'jalan.aruslantas.index',
+          ),
+          1 => 
+          array (
+            0 => 'jalan',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      283 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'jalan.aruslantas.create',
+          ),
+          1 => 
+          array (
+            0 => 'jalan',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      302 => 
       array (
         0 => 
         array (
@@ -936,7 +1040,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      225 => 
+      315 => 
       array (
         0 => 
         array (
@@ -960,7 +1064,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      233 => 
+      323 => 
       array (
         0 => 
         array (
@@ -1004,7 +1108,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      243 => 
+      333 => 
       array (
         0 => 
         array (
@@ -1026,7 +1130,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      253 => 
+      343 => 
       array (
         0 => 
         array (
@@ -1068,95 +1172,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      284 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'kecelakaan.show',
-          ),
-          1 => 
-          array (
-            0 => 'kecelakaan',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      297 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'kecelakaan.edit',
-          ),
-          1 => 
-          array (
-            0 => 'kecelakaan',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      305 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'kecelakaan.update',
-          ),
-          1 => 
-          array (
-            0 => 'kecelakaan',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'kecelakaan.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'kecelakaan',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      331 => 
+      369 => 
       array (
         0 => 
         array (
@@ -1179,7 +1195,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      344 => 
+      382 => 
       array (
         0 => 
         array (
@@ -1202,7 +1218,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      352 => 
+      390 => 
       array (
         0 => 
         array (
@@ -1244,7 +1260,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      387 => 
+      425 => 
       array (
         0 => 
         array (
@@ -1267,7 +1283,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      400 => 
+      438 => 
       array (
         0 => 
         array (
@@ -1290,7 +1306,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      408 => 
+      446 => 
       array (
         0 => 
         array (
@@ -1332,7 +1348,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      432 => 
+      470 => 
       array (
         0 => 
         array (
@@ -1369,7 +1385,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::odRLAeZcjrWEsVAu' => 
+    'generated::mmANwsbXUfL5PHuA' => 
     array (
       'methods' => 
       array (
@@ -1390,7 +1406,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::odRLAeZcjrWEsVAu',
+        'as' => 'generated::mmANwsbXUfL5PHuA',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1406,7 +1422,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::2CLZkp8Fv8BxqR3w' => 
+    'generated::npGLEa0IUxS2dAcF' => 
     array (
       'methods' => 
       array (
@@ -1423,13 +1439,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:295:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000008540000000000000000";}";s:4:"hash";s:44:"2lmFN+3CosdfCwuqCNChK0F4WTTl15RgsNQMHVElzMI=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004640000000000000000";}";s:4:"hash";s:44:"g18V0O8HSCNChjJYICRC+s/ofUPzyheCqLs3BjcJi9U=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::2CLZkp8Fv8BxqR3w',
+        'as' => 'generated::npGLEa0IUxS2dAcF',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1482,7 +1498,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::tT2Fw3MMawGoWEXu' => 
+    'generated::t4GI8ExcEOMx6huK' => 
     array (
       'methods' => 
       array (
@@ -1502,7 +1518,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::tT2Fw3MMawGoWEXu',
+        'as' => 'generated::t4GI8ExcEOMx6huK',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1591,7 +1607,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::66KvSEvDAxwY4tyL' => 
+    'generated::RjLDKQUbwzNymXWU' => 
     array (
       'methods' => 
       array (
@@ -1611,7 +1627,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::66KvSEvDAxwY4tyL',
+        'as' => 'generated::RjLDKQUbwzNymXWU',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1810,7 +1826,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::bysa4CdiqhSrBFhS' => 
+    'generated::xudGCjfYfbuLdp3x' => 
     array (
       'methods' => 
       array (
@@ -1830,7 +1846,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::bysa4CdiqhSrBFhS',
+        'as' => 'generated::xudGCjfYfbuLdp3x',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1846,7 +1862,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::UKAUrCTPRhtouEEU' => 
+    'generated::UiiS5djnKylOJoYq' => 
     array (
       'methods' => 
       array (
@@ -1862,13 +1878,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:265:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:47:"function () {
     return \\view(\'users.home\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000008560000000000000000";}";s:4:"hash";s:44:"oZ+CAv9Z3WPaUo3MXnLuAg50/ABb/PEFzbaAdZ85v/Q=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004660000000000000000";}";s:4:"hash";s:44:"JRyk0NL/4icg/pPDkKBODuYTVNARv/zX3VAfKfx707Y=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::UKAUrCTPRhtouEEU',
+        'as' => 'generated::UiiS5djnKylOJoYq',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1884,7 +1900,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::0dIiPG5ZjqTlmpiB' => 
+    'generated::xaqqkN4eEENgy9vJ' => 
     array (
       'methods' => 
       array (
@@ -1900,13 +1916,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:267:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:49:"function () {
     return \\view(\'users.author\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000085d0000000000000000";}";s:4:"hash";s:44:"urT+JFOq5ogIi7sOv9HKfSxDRk+8RlX42BDO4/OcHf8=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000046d0000000000000000";}";s:4:"hash";s:44:"nKG2fsQkCs9+NJ130dHJQPrCyy+jBPHpPyJ+WgABd+s=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::0dIiPG5ZjqTlmpiB',
+        'as' => 'generated::xaqqkN4eEENgy9vJ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1922,7 +1938,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::TTDohpWGObiV1MAz' => 
+    'generated::MU3MI4dhKmX2nWb6' => 
     array (
       'methods' => 
       array (
@@ -1938,13 +1954,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:276:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:58:"function () {
     return \\view(\'users.data_kecelakaan\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000008650000000000000000";}";s:4:"hash";s:44:"h2cs9ccr18lnjO4AY56OzQOyGajo9XVFug8Ky7xQoaY=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004750000000000000000";}";s:4:"hash";s:44:"VB9usfD1LqGzF5t1eeDN71YzITnqRi5bdBagzsANnbI=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::TTDohpWGObiV1MAz',
+        'as' => 'generated::MU3MI4dhKmX2nWb6',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2070,7 +2086,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::wcGp2iiQvL7EddWO' => 
+    'generated::0isFv9M97QXIJ2mJ' => 
     array (
       'methods' => 
       array (
@@ -2094,7 +2110,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::wcGp2iiQvL7EddWO',
+        'as' => 'generated::0isFv9M97QXIJ2mJ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2666,14 +2682,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'kecelakaan.index' => 
+    'jalan.kecelakaan.index' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'dashboard/kecelakaan',
+      'uri' => 'dashboard/jalan/{jalan}/kecelakaan',
       'action' => 
       array (
         'middleware' => 
@@ -2683,7 +2699,7 @@ app('router')->setCompiledRoutes(
           2 => 'verified',
           3 => 'Admin',
         ),
-        'as' => 'kecelakaan.index',
+        'as' => 'jalan.kecelakaan.index',
         'uses' => 'App\\Http\\Controllers\\KecelakaanController@index',
         'controller' => 'App\\Http\\Controllers\\KecelakaanController@index',
         'namespace' => NULL,
@@ -2706,14 +2722,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'kecelakaan.create' => 
+    'jalan.kecelakaan.create' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'dashboard/kecelakaan/create',
+      'uri' => 'dashboard/jalan/{jalan}/kecelakaan/create',
       'action' => 
       array (
         'middleware' => 
@@ -2723,7 +2739,7 @@ app('router')->setCompiledRoutes(
           2 => 'verified',
           3 => 'Admin',
         ),
-        'as' => 'kecelakaan.create',
+        'as' => 'jalan.kecelakaan.create',
         'uses' => 'App\\Http\\Controllers\\KecelakaanController@create',
         'controller' => 'App\\Http\\Controllers\\KecelakaanController@create',
         'namespace' => NULL,
@@ -2746,13 +2762,13 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'kecelakaan.store' => 
+    'jalan.kecelakaan.store' => 
     array (
       'methods' => 
       array (
         0 => 'POST',
       ),
-      'uri' => 'dashboard/kecelakaan',
+      'uri' => 'dashboard/jalan/{jalan}/kecelakaan',
       'action' => 
       array (
         'middleware' => 
@@ -2762,7 +2778,7 @@ app('router')->setCompiledRoutes(
           2 => 'verified',
           3 => 'Admin',
         ),
-        'as' => 'kecelakaan.store',
+        'as' => 'jalan.kecelakaan.store',
         'uses' => 'App\\Http\\Controllers\\KecelakaanController@store',
         'controller' => 'App\\Http\\Controllers\\KecelakaanController@store',
         'namespace' => NULL,
@@ -2785,14 +2801,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'kecelakaan.show' => 
+    'jalan.kecelakaan.show' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'dashboard/kecelakaan/{kecelakaan}',
+      'uri' => 'dashboard/jalan/{jalan}/kecelakaan/{kecelakaan}',
       'action' => 
       array (
         'middleware' => 
@@ -2802,7 +2818,7 @@ app('router')->setCompiledRoutes(
           2 => 'verified',
           3 => 'Admin',
         ),
-        'as' => 'kecelakaan.show',
+        'as' => 'jalan.kecelakaan.show',
         'uses' => 'App\\Http\\Controllers\\KecelakaanController@show',
         'controller' => 'App\\Http\\Controllers\\KecelakaanController@show',
         'namespace' => NULL,
@@ -2825,14 +2841,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'kecelakaan.edit' => 
+    'jalan.kecelakaan.edit' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'dashboard/kecelakaan/{kecelakaan}/edit',
+      'uri' => 'dashboard/jalan/{jalan}/kecelakaan/{kecelakaan}/edit',
       'action' => 
       array (
         'middleware' => 
@@ -2842,7 +2858,7 @@ app('router')->setCompiledRoutes(
           2 => 'verified',
           3 => 'Admin',
         ),
-        'as' => 'kecelakaan.edit',
+        'as' => 'jalan.kecelakaan.edit',
         'uses' => 'App\\Http\\Controllers\\KecelakaanController@edit',
         'controller' => 'App\\Http\\Controllers\\KecelakaanController@edit',
         'namespace' => NULL,
@@ -2865,14 +2881,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'kecelakaan.update' => 
+    'jalan.kecelakaan.update' => 
     array (
       'methods' => 
       array (
         0 => 'PUT',
         1 => 'PATCH',
       ),
-      'uri' => 'dashboard/kecelakaan/{kecelakaan}',
+      'uri' => 'dashboard/jalan/{jalan}/kecelakaan/{kecelakaan}',
       'action' => 
       array (
         'middleware' => 
@@ -2882,7 +2898,7 @@ app('router')->setCompiledRoutes(
           2 => 'verified',
           3 => 'Admin',
         ),
-        'as' => 'kecelakaan.update',
+        'as' => 'jalan.kecelakaan.update',
         'uses' => 'App\\Http\\Controllers\\KecelakaanController@update',
         'controller' => 'App\\Http\\Controllers\\KecelakaanController@update',
         'namespace' => NULL,
@@ -2905,13 +2921,13 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'kecelakaan.destroy' => 
+    'jalan.kecelakaan.destroy' => 
     array (
       'methods' => 
       array (
         0 => 'DELETE',
       ),
-      'uri' => 'dashboard/kecelakaan/{kecelakaan}',
+      'uri' => 'dashboard/jalan/{jalan}/kecelakaan/{kecelakaan}',
       'action' => 
       array (
         'middleware' => 
@@ -2921,7 +2937,7 @@ app('router')->setCompiledRoutes(
           2 => 'verified',
           3 => 'Admin',
         ),
-        'as' => 'kecelakaan.destroy',
+        'as' => 'jalan.kecelakaan.destroy',
         'uses' => 'App\\Http\\Controllers\\KecelakaanController@destroy',
         'controller' => 'App\\Http\\Controllers\\KecelakaanController@destroy',
         'namespace' => NULL,
@@ -3857,7 +3873,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::R2rZS5VBWBf8KRfZ' => 
+    'generated::CFzhIIdBhtlPR6YH' => 
     array (
       'methods' => 
       array (
@@ -3878,7 +3894,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::R2rZS5VBWBf8KRfZ',
+        'as' => 'generated::CFzhIIdBhtlPR6YH',
       ),
       'fallback' => false,
       'defaults' => 
