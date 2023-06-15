@@ -40,6 +40,7 @@
                             <table id="alternative-page-datatable" class="table table-striped dt-responsive nowrap w-100">
                                 <thead>
                                     <tr>
+                                        <th>No</th>
                                         <th>Nama Jalan</th>
                                         <th>Status Jalan</th>
                                         <th style="text-align: center;">Action</th>
@@ -48,6 +49,7 @@
                                 <tbody>
                                     @foreach ($data as $data)
                                         <tr>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $data->nama_jalan }}</td>
                                             <td>{{ $data->status_jalan }}</td>
                                             <td style="text-align: center;">
@@ -57,8 +59,6 @@
                                                 <button type="button" class="btn btn-danger ml-1" data-bs-toggle="modal"
                                                     data-bs-target="#warning-alert-modal">Delete
                                                 </button>
-
-
 
                                                 <div id="warning-alert-modal" class="modal fade" tabindex="-1"
                                                     role="dialog" aria-hidden="true">
@@ -98,6 +98,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>No</th>
                                         <th>Nama Jalan</th>
                                         <th>Status Jalan</th>
                                         <th>Action</th>

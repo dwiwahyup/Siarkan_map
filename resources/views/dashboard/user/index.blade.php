@@ -40,8 +40,9 @@
                             <table id="alternative-page-datatable" class="table table-striped dt-responsive nowrap w-100">
                                 <thead>
                                     <tr>
-                                        <th>Nama Jalan</th>
-                                        <th>Status Jalan</th>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
                                         <th>Role</th>
                                         <th style="text-align: center;">Action</th>
                                     </tr>
@@ -49,6 +50,7 @@
                                 <tbody>
                                     @foreach ($data as $data)
                                         <tr>
+                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $data->name }}</td>
                                             <td>{{ $data->email }}</td>
                                             <td>{{ $data->role}}</td>
@@ -95,8 +97,9 @@
                                 </tbody>
                                 <tfoot>
                                     <tr class="">
-                                        <th>Nama Jalan</th>
-                                        <th>Status Jalan</th>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Email</th>
                                         <th>Role</th>
                                         <th style="text-align: center;">Action</th>
                                     </tr>

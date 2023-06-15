@@ -19,7 +19,7 @@ class KecelakaanController extends Controller
         $data = Kecelakaan::with('jalan')->where('jalans_id', $jalan->id)->get();
         // dd($data);
 
-        return view('dashboard.kecelakaan.index', ['data' => $data]);
+        return view('dashboard.kecelakaan.index', ['data' => $data],  ['nama_jalan' => $jalan]);
     }
 
     public function create($slug)
@@ -71,6 +71,17 @@ class KecelakaanController extends Controller
         }
     }
 
+    public function show(Int $id)
+    {
+        $detailkecelakaan = Kecelakaan::select('tanggal', 'jam', 'nama_jalan', 'km_simpang_gang', 'dusun_desa', 'kecamatan', 'kabupaten', 'kendaraan' ,'korban_md','korban_lb','korban_lr')->find($id);    
+        
+        return response()->json([
+            'status' => 'success',
+            'detail' => $detailkecelakaan
+        ]);
+        dd($detailkecelakaan);
+    }
+
     public function edit($jalan, $kecelakaan)
     {
         $jalan = Jalan::where('slug', $jalan)->first();
@@ -106,7 +117,7 @@ class KecelakaanController extends Controller
             return redirect()
                 ->route('jalan.kecelakaan.index', ['jalan' => $jalan->slug])
                 ->with([
-                    'success' => 'Data Jalan Berhasil Ditambahkan'
+                    'success' => 'Data Jalan Berhasil Diubah'
                 ]);
         } else {
             return redirect()
