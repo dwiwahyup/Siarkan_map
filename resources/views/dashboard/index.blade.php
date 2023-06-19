@@ -1,56 +1,52 @@
 @extends('dashboard/layouts.template')
 
 @section('content')
-    <div class="row">
-        <div class="col-12">
-            <div class="page-title-box">
-                <div class="page-title-right">
-                </div>
-                <h4 class="page-title">Dashboard</h4>
+<style>
+    #map {
+        height: 500px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+            </div>
+            <h4 class="page-title">Dashboard</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title mb-3">Peta Kecelakaan</h4>
+                <div id="map"></div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="row">
-        <div class=" col-lg-12">
 
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="card widget-flat">
-                        <div class="card-body">
-                            <div class="float-end">
-                                <i class="mdi mdi-account-multiple widget-icon"></i>
-                            </div>
-                            <h5 class="text-muted fw-normal mt-0" title="Number of Customers">Daerah Sangat Rawan</h5>
-                            <h3 class="mt-3 mb-1">{{ $sangatRawanCount }}</h3>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-4">
-                    <div class="card widget-flat">
-                        <div class="card-body">
-                            <div class="float-end">
-                                <i class="mdi mdi-account-multiple widget-icon"></i>
-                            </div>
-                            <h5 class="text-muted fw-normal mt-0" title="Number of Customers">Daerah Rawan</h5>
-                            <h3 class="mt-3 mb-1">{{ $rawanCount }}</h3>
-                        </div>
-                    </div>
-                </div>
+<script>
+    const map = L.map('map').setView([-6.9622, 111.9129], 11);
 
-                <div class="col-sm-4">
-                    <div class="card widget-flat">
-                        <div class="card-body">
-                            <div class="float-end">
-                                <i class="mdi mdi-account-multiple widget-icon"></i>
-                            </div>
-                            <h5 class="text-muted fw-normal mt-0" title="Number of Customers">Daerah Tidak Rawan</h5>
-                            <h3 class="mt-3 mb-1">{{ $tidakRawanCount }}</h3>
-                        </div>
-                    </div>
-                </div>
+    L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    }).addTo(map);
 
-            </div>
-        </div>
-    @endsection
+    @foreach ($data as $lokasi)
+        
+    var marker = L.marker([{{ $lokasi->latitude }}, {{ $lokasi->longitude }}]).addTo(map);
+    
+    var popupContent = "<b>{{ $lokasi->nama_jalan }}</b><br>{{ $lokasi->km }}";
+    marker.bindPopup(popupContent).openPopup();
+    
+    @endforeach
+    
+</script>
+
+@endsection

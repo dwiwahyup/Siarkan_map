@@ -53,6 +53,7 @@ Route::middleware(['auth', 'verified'])
             Route::resource('user', UserController::class);
             Route::resource('jalan', JalanController::class);
             Route::resource('jalan.kecelakaan', KecelakaanController::class);
+            //preview
             Route::resource('jalan.aruslantas', ArusLantasController::class);
             //rules
             Route::resource('rules', RulesController::class);

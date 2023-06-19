@@ -1,7 +1,6 @@
 @extends('users/layouts.template')
 
 @section('content')
-
 <section class="wrapper bg-soft-primary">
     <div class="container pt-10 pb-19 pt-md-14 pb-md-20 text-center">
         <div class="row">
@@ -95,6 +94,7 @@
             </div>
         </div>
     </div>
+
 </section>
 
 

@@ -56,23 +56,38 @@
                                         <input type="text" class="form-control" name="nama_jalan" value="{{old('nama_jalan') ?? $kecelakaan->nama_jalan}}" readonly>
                                 </div>
                                 <div class="mb-3 col-md-3">
-                                    <label class="form-label">KM/Simpang/Gang</label>
-                                    <input type="text" class="form-control" name="km_simpang_gang" value="{{old('km_simpang_gang') ?? $kecelakaan->km_simpang_gang}}">
+                                    <label class="form-label">Km</label>
+                                    <input type="text" class="form-control" name="km" value="{{old('km') ?? $kecelakaan->km}}">
                                 </div>
+                                
                                 <div class="mb-3 col-md-3">
-                                    <label class="form-label">Dusun/Desa</label>
-                                    <input type="text" class="form-control" name="dusun_desa" value="{{old('dusun_desa') ?? $kecelakaan->dusun_desa}}">
+                                    <label class="form-label">TKP/Dusun</label>
+                                    <input type="text" class="form-control" name="tkp_dusun" value="{{old('tkp_dusun') ?? $kecelakaan->tkp_dusun}}">
+                                </div>
+
+                                <div class="mb-3 col-md-3">
+                                    <label class="form-label">Desa</label>
+                                    <input type="text" class="form-control" name="desa" value="{{old('desa') ?? $kecelakaan->desa}}">
                                 </div>
                             </div>
                             <div class="row g-2">
-                                <div class="mb-3 col-md-6">
+                                <div class="mb-3 col-md-3">
                                     <label class="form-label">Kecamatan</label>
                                     <input type="text" class="form-control" name="kecamatan" value="{{old('kecamatan') ?? $kecelakaan->kecamatan}}">
                                 </div>
-                                <div class="mb-3 col-md-6">
+                                <div class="mb-3 col-md-3">
                                     <label class="form-label">Kabupaten</label>
                                     <input type="text" class="form-control" name="kabupaten" value="{{old('kabupaten') ?? $kecelakaan->kabupaten}}">
                                 </div>
+                                <div class="mb-3 col-md-3">
+                                    <label class="form-label">Latitude</label>
+                                    <input type="text" class="form-control" name="latitude" value="{{old('latitude') ?? $kecelakaan->latitude}}">
+                                </div>
+                                <div class="mb-3 col-md-3">
+                                    <label class="form-label">Longitude</label>
+                                    <input type="text" class="form-control" name="longitude" value="{{old('longitude') ?? $kecelakaan->longitude}}">
+                                </div>
+                                
                             </div>
                             <hr>
                             <h4 class="header-title">Kendaraan Yang Terlibat Laka</h4>
@@ -85,15 +100,15 @@
                             <div class="row g-2">
                                 <div class="mb-3 col-md-4">
                                     <label class="form-label">Meninggal Dunia</label>
-                                    <input type="text" class="form-control" name="korban_md" value="{{old('korban_md') ?? $kecelakaan->korban_md}}">
+                                    <input type="number" class="form-control" name="korban_md" value="{{old('korban_md') ?? $kecelakaan->korban_md}}">
                                 </div>
                                 <div class="mb-3 col-md-4">
                                     <label class="form-label">Luka Berat</label>
-                                    <input type="text" class="form-control" name="korban_lb" value="{{old('korban_lb') ?? $kecelakaan->korban_lb}}">
+                                    <input type="number" class="form-control" name="korban_lb" value="{{old('korban_lb') ?? $kecelakaan->korban_lb}}">
                                 </div>
                                 <div class="mb-3 col-md-4">
                                     <label class="form-label">Luka Ringan</label>
-                                    <input type="text" class="form-control" name="korban_lr" value="{{old('korban_lr') ?? $kecelakaan->korban_lr}}">
+                                    <input type="number" class="form-control" name="korban_lr" value="{{old('korban_lr') ?? $kecelakaan->korban_lr}}">
                                 </div>
                             </div>
                             <p><button type="submit" class="btn btn-primary plus float-right">Simpan</button></p>

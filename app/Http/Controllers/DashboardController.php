@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kecelakaan;
 use Illuminate\Http\Request;
 use App\Models\Lokasi;
 
@@ -13,6 +14,8 @@ class DashboardController extends Controller
         $rawanCount = Lokasi::where('tingkat_kerawanan', 'Rawan')->count();
         $tidakRawanCount = Lokasi::where('tingkat_kerawanan', 'Tidak Rawan')->count();
 
-        return view('dashboard.index', ['sangatRawanCount' => $sangatRawanCount, 'rawanCount' => $rawanCount, 'tidakRawanCount' => $tidakRawanCount]);
+        $data = Kecelakaan::with('jalan')->get();
+        // dd($data);
+        return view('dashboard.index', ['sangatRawanCount' => $sangatRawanCount, 'rawanCount' => $rawanCount, 'tidakRawanCount' => $tidakRawanCount, 'data' => $data]);
     }
 }

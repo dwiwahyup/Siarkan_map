@@ -49,6 +49,7 @@
                     <table id="example" class="table table-striped text-center" style="width:100%">
                         <thead>
                             <tr>
+                                <th>No</th>
                                 <th>Nama Jalan</th>
                                 <th>Alamat</th>
                                 <th>Status Kerawanan</th>
@@ -58,6 +59,7 @@
                         <tbody>
                             @foreach ($data as $lokasi)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $lokasi->jalan->nama_jalan }}</td>
                                     <td>{{ $lokasi->alamat }}</td>
                                     <td>
@@ -81,6 +83,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
+                                <th>No</th>
                                 <th>Nama Jalan</th>
                                 <th>Alamat</th>
                                 <th>Status Kerawanan</th>
@@ -113,7 +116,7 @@
         }).addTo(map);
 
         @foreach ($data as $lokasi)
-            var markerColor = "blue"; // Default marker color
+            var markerColor = "green"; // Default marker color
 
             @if ($lokasi->tingkat_kerawanan === 'Sangat Rawan')
                 markerColor = "red"; // Change marker color to red for "Sangat Rawan" data points

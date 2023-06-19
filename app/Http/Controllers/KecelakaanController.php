@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Jalan;
 use App\Models\Kecelakaan;
-use Illuminate\Support\Facades\DB;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Return_;
 
 class KecelakaanController extends Controller
 {
@@ -36,10 +34,13 @@ class KecelakaanController extends Controller
             'tanggal' => 'required',
             'jam' => 'required',
             // 'nama_jalan'=> 'required',
-            'km_simpang_gang' => 'required',
-            'dusun_desa' => 'required',
+            'km' => 'required',
+            'tkp_dusun' => 'required',
+            'desa' => 'required',
             'kecamatan' => 'required',
             'kabupaten' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
             'kendaraan' => 'required',
             'korban_md' => 'required',
             'korban_lb' => 'required',
@@ -71,15 +72,17 @@ class KecelakaanController extends Controller
         }
     }
 
-    public function show(Int $id)
+    public function show($jalan, $kecelakaan)
     {
-        $detailkecelakaan = Kecelakaan::select('tanggal', 'jam', 'nama_jalan', 'km_simpang_gang', 'dusun_desa', 'kecamatan', 'kabupaten', 'kendaraan' ,'korban_md','korban_lb','korban_lr')->find($id);    
+        $detailkecelakaan = Kecelakaan::select('tanggal', 'jam', 'nama_jalan', 'km', 'tkp_dusun', 'desa', 'kecamatan', 'kabupaten', 'latitude','longitude', 'kendaraan' ,'korban_md','korban_lb','korban_lr')->find($kecelakaan);    
         
+        // dd($detailkecelakaan);
+
         return response()->json([
-            'status' => 'success',
+            'status' => 200,
             'detail' => $detailkecelakaan
         ]);
-        dd($detailkecelakaan);
+        // dd($detailkecelakaan);
     }
 
     public function edit($jalan, $kecelakaan)
@@ -98,10 +101,13 @@ class KecelakaanController extends Controller
             'tanggal' => 'required',
             'jam' => 'required',
             'nama_jalan' => 'required',
-            'km_simpang_gang' => 'required',
-            'dusun_desa' => 'required',
+            'km' => 'required',
+            'tkp_dusun' => 'required',
+            'desa' => 'required',
             'kecamatan' => 'required',
             'kabupaten' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
             'kendaraan' => 'required',
             'korban_md' => 'required',
             'korban_lb' => 'required',
@@ -136,16 +142,17 @@ class KecelakaanController extends Controller
         $kecelakaan->delete();
         if ($kecelakaan) {
             return redirect()
-                ->route('jalan.kecelakaan.index', ['jalan' =>$jalan->slug])
+                ->back()
                 ->with([
                     'success' => 'Data Jalan Berhasil Dihapus'
                 ]);
         } else {
             return redirect()
-                ->route('post.index')
+                ->back()
                 ->with([
                     'error' => 'Some problem has occurred, please try again'
                 ]);
         }
     }
+
 }

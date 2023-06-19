@@ -19,11 +19,14 @@ class CreateKecelakaansTable extends Migration
             $table->date('tanggal');
             $table->time('jam');
             $table->string('nama_jalan');
-            $table->string('km_simpang_gang')->nullable();
-            $table->string('dusun_desa');
+            $table->string('km')->nullable();
+            $table->string('tkp_dusun')->nullable();
+            $table->string('desa');
             $table->string('kecamatan');
             $table->string('kabupaten');
             $table->string('kendaraan');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->string('korban_md')->nullable();
             $table->string('korban_lb')->nullable();
             $table->string('korban_lr')->nullable();

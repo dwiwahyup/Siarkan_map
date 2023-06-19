@@ -4,20 +4,20 @@
     <!-- Brand Logo Light -->
     <a href="index.html" class="logo logo-light">
         <span class="">
-            <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png"  height="30" width="150" alt="logo">
+            <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png" height="30" width="150" alt="logo">
         </span>
         <span class="logo-sm">
-            <img src="{{ url('assets/dashboard/images/logo-sm.png')}}" alt="small logo">
+            <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png" alt="small logo">
         </span>
     </a>
 
     <!-- Brand Logo Dark -->
     <a href="index.html" class="logo logo-dark">
         <span class="logo-lg">
-            <img src="{{ url('assets/dashboard/images/logo-dark.png')}}" alt="dark logo">
+            <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png" alt="dark logo">
         </span>
         <span class="logo-sm">
-            <img src="{{ url('assets/dashboard/images/logo-dark-sm.png')}}" alt="small logo">
+            <img src="https://res.cloudinary.com/diptxmzhz/image/upload/v1685520080/Rawan%20Kecelakaan/image-removebg-preview_1_sqi7he.png" alt="small logo">
         </span>
     </a>
 
@@ -52,14 +52,13 @@
                 </a>
             </li>
 
-
             <li class="side-nav-item">
                 <a href="{{'/dashboard/jalan'}}" class="side-nav-link">
                     <i class="uil-traffic-barrier"></i>
                     <span> Data Jalan </span>
                 </a>
             </li>
-            
+
             <li class="side-nav-item">
                 <a href="{{'/dashboard/rules'}}" class="side-nav-link">
                     <i class="uil-clipboard-notes"></i>

@@ -63,7 +63,7 @@
 
                                         <a href="{{route('jalan.kecelakaan.edit', ['jalan' => $data->jalan->slug, 'kecelakaan' => $data->slug])}}" class="btn btn-success btn-md ml-1">Edit</a>
 
-                                        <button type="button" value="{{$data ->id}}" class="btn btn-info showbtn" data-bs-toggle="modal" data-bs-target="#detail-data">Detail </button>
+                                        <button type="button" value="{{$data->id}}" class="btn btn-info showbtn" data-bs-toggle="modal" data-bs-target="#detail-data">Detail </button>
 
                                         <button type="button" class="btn btn-danger ml-1" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">Delete
                                         </button>
@@ -116,31 +116,41 @@
 
 @include('dashboard.kecelakaan.detail')
 
-
-<script>
-    $(document).ready(function() {
-        $(document).on('click', '.showbtn', function() {
-            var id = $(this).val();
-            $.ajax({
-                type: "GET",
-                url: 'kecelakaan/' + id,
-                success: function(response) {
-                    $('.tanggal').text(response.detail.tanggal);
-                    $('.jam').text(response.detail.jam);
-                    $('.nama_jalan').text(response.detail.nama_jalan);
-                    $('.km_simpang_gang').text(response.detail.km_simpang_gang);
-                    $('.dusun_desa').text(response.detail.dusun_desa);
-                    $('.kecamatan').text(response.detail.kecamatan);
-                    $('.kabupaten').text(response.detail.kabupaten);
-                    $('.kendaraan').text(response.detail.kendaraan);
-                    $('.korban_md').text(response.detail.korban_md);
-                    $('.korban_lb').text(response.detail.korban_lb);
-                    $('.korban_lr').text(response.detail.korban_lr);
-                }
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery(document).on('click', '.showbtn', function() {
+                var kecelakaan = jQuery(this).val();
+                var jalan = {{$nama_jalan->id}};
+                console.log(jalan);
+                $.ajax({
+                    type: "GET",
+                    url: '/dashboard/jalan/' + jalan + '/kecelakaan/' + kecelakaan,
+                    success: function(response) {
+                        // console.log(response.detail.tanggal);
+                        $('input[name="tanggal"]').val(response.detail.tanggal);
+                        $('input[name="jam"]').val(response.detail.jam);
+                        $('input[name="nama_jalan"]').val(response.detail.nama_jalan);
+                        $('input[name="km"]').val(response.detail.km);
+                        $('input[name="tkp_dusun"]').val(response.detail.tkp_dusun);
+                        $('input[name="desa"]').val(response.detail.desa);
+                        $('input[name="kecamatan"]').val(response.detail.kecamatan);
+                        $('input[name="kabupaten"]').val(response.detail.kabupaten);
+                        $('input[name="latitude"]').val(response.detail.latitude);
+                        $('input[name="longitude"]').val(response.detail.longitude);
+                        $('input[name="kendaraan"]').val(response.detail.kendaraan);
+                        $('input[name="korban_md"]').val(response.detail.korban_md);
+                        $('input[name="korban_lb"]').val(response.detail.korban_lb);
+                        $('input[name="korban_lr"]').val(response.detail.korban_lr);
+                    }
+                })
             })
         })
-    })
-</script>
+    </script>
+
+
+@push('js')
+@endpush
 
 
 @endsection

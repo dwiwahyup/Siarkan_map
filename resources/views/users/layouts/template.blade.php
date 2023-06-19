@@ -40,6 +40,8 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -58,6 +60,8 @@
     </div>
     <script src="{{ url('assets/users/js/plugins.js') }}"></script>
     <script src="{{ url('assets/users/js/theme.js') }}"></script>
+    
+    @stack('js')
 
 
 </body>

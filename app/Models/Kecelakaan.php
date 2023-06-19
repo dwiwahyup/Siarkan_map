@@ -11,7 +11,7 @@ class Kecelakaan extends Model
         use HasFactory, Sluggable;
 
     protected $fillable = [
-        'slug', 'tanggal', 'jam', 'nama_jalan', 'km_simpang_gang', 'dusun_desa', 'kecamatan', 'kabupaten', 'kendaraan' ,'korban_md','korban_lb','korban_lr','jalans_id',
+        'slug', 'tanggal', 'jam', 'nama_jalan', 'km', 'tkp_dusun','desa', 'kecamatan', 'kabupaten', 'latitude', 'longitude', 'kendaraan' ,'korban_md','korban_lb','korban_lr','jalans_id',
     ];
     public function sluggable(): array
     {

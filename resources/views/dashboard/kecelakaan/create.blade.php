@@ -50,7 +50,7 @@
                             <hr>
                             <h4 class="header-title">Lokasi TKP</h4>
                             <div class="row g-2">
-                                <div class="mb-3 col-md-6">
+                                <div class="mb-3 col-md-3">
                                     <label class="form-label">Nama Jalan</label>
                                     <select class="form-select" name="jalans_id">
                                         <option>Pilih Jalan</option>
@@ -58,23 +58,38 @@
                                     </select>
                                 </div>
                                 <div class="mb-3 col-md-3">
-                                    <label class="form-label">KM/Simpang/Gang</label>
-                                    <input type="text" class="form-control" name="km_simpang_gang">
+                                    <label class="form-label">Km</label>
+                                    <input type="text" class="form-control" name="km">
                                 </div>
+                                
+                                <div class="mb-3 col-md-3">
+                                    <label class="form-label">TKP/Dusun</label>
+                                    <input type="text" class="form-control" name="tkp_dusun">
+                                </div>
+
                                 <div class="mb-3 col-md-3">
                                     <label class="form-label">Dusun/Desa</label>
-                                    <input type="text" class="form-control" name="dusun_desa">
+                                    <input type="text" class="form-control" name="desa">
                                 </div>
                             </div>
                             <div class="row g-2">
-                                <div class="mb-3 col-md-6">
+                                <div class="mb-3 col-md-3">
                                     <label class="form-label">Kecamatan</label>
                                     <input type="text" class="form-control" name="kecamatan">
                                 </div>
-                                <div class="mb-3 col-md-6">
+                                <div class="mb-3 col-md-3">
                                     <label class="form-label">Kabupaten</label>
                                     <input type="text" class="form-control" name="kabupaten">
                                 </div>
+                                <div class="mb-3 col-md-3">
+                                    <label class="form-label">Latitude</label>
+                                    <input type="text" class="form-control" name="latitude">
+                                </div>
+                                <div class="mb-3 col-md-3">
+                                    <label class="form-label">Longitude</label>
+                                    <input type="text" class="form-control" name="longitude">
+                                </div>
+                                
                             </div>
                             <hr>
                             <h4 class="header-title">Kendaraan Yang Terlibat Laka</h4>
@@ -87,15 +102,15 @@
                             <div class="row g-2">
                                 <div class="mb-3 col-md-4">
                                     <label class="form-label">Meninggal Dunia</label>
-                                    <input type="text" class="form-control" name="korban_md">
+                                    <input type="number" class="form-control" name="korban_md">
                                 </div>
                                 <div class="mb-3 col-md-4">
                                     <label class="form-label">Luka Berat</label>
-                                    <input type="text" class="form-control" name="korban_lb">
+                                    <input type="number" class="form-control" name="korban_lb">
                                 </div>
                                 <div class="mb-3 col-md-4">
                                     <label class="form-label">Luka Ringan</label>
-                                    <input type="text" class="form-control" name="korban_lr">
+                                    <input type="number" class="form-control" name="korban_lr">
                                 </div>
                             </div>
                             <p><button type="submit" class="btn btn-primary plus float-right">Simpan</button></p>

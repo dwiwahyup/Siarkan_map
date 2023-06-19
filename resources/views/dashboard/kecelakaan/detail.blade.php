@@ -13,7 +13,7 @@
                         <div class="row g-2">
                             <div class="mb-3 col-md-6">
                                 <label class="form-label">Tanggal Kejadian</label>
-                                <input class="form-control" type="text" name="tanggal" readonly>
+                                <input class="form-control" name="tanggal" readonly>
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label">Jam Kejadian</label>
@@ -23,27 +23,39 @@
                         <hr>
                         <h4 class="header-title">Lokasi TKP</h4>
                         <div class="row g-2">
-                            <div class="mb-3 col-md-6">
+                            <div class="mb-3 col-md-3">
                                 <label class="form-label">Nama Jalan</label>
                                 <input type="text" class="form-control" name="nama_jalan" readonly>
                             </div>
                             <div class="mb-3 col-md-3">
-                                <label class="form-label">KM/Simpang/Gang</label>
-                                <input type="text" class="form-control" name="km_simpang_gang" readonly>
+                                <label class="form-label">KM</label>
+                                <input type="text" class="form-control" name="km" readonly>
+                            </div>
+                            <div class="mb-3 col-md-3">
+                                <label class="form-label">Tkp/dusun</label>
+                                <input type="text" class="form-control" name="tkp_dusun" readonly>
                             </div>
                             <div class="mb-3 col-md-3">
                                 <label class="form-label">Dusun/Desa</label>
-                                <input type="text" class="form-control" name="dusun_desa" readonly>
+                                <input type="text" class="form-control" name="desa" readonly>
                             </div>
                         </div>
                         <div class="row g-2">
-                            <div class="mb-3 col-md-6">
+                            <div class="mb-3 col-md-3">
                                 <label class="form-label">Kecamatan</label>
                                 <input type="text" class="form-control" name="kecamatan" readonly>
                             </div>
-                            <div class="mb-3 col-md-6">
+                            <div class="mb-3 col-md-3">
                                 <label class="form-label">Kabupaten</label>
                                 <input type="text" class="form-control" name="kabupaten" readonly>
+                            </div>
+                            <div class="mb-3 col-md-3">
+                                <label class="form-label">Latitude</label>
+                                <input type="text" class="form-control" name="latitude" readonly>
+                            </div>
+                            <div class="mb-3 col-md-3">
+                                <label class="form-label">Longitude</label>
+                                <input type="text" class="form-control" name="longitude" readonly>
                             </div>
                         </div>
                         <hr>
