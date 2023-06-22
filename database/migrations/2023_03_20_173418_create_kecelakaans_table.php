@@ -24,9 +24,9 @@ class CreateKecelakaansTable extends Migration
             $table->string('desa');
             $table->string('kecamatan');
             $table->string('kabupaten');
-            $table->string('kendaraan');
             $table->string('latitude');
             $table->string('longitude');
+            $table->string('kendaraan');
             $table->string('korban_md')->nullable();
             $table->string('korban_lb')->nullable();
             $table->string('korban_lr')->nullable();
