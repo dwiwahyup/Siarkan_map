@@ -93,7 +93,7 @@
         var longitude = {{ $lokasi->longitude }};
         //jika titik koordinat sama maka buat circle
         
-        @if ($lokasi->latitude == $lokasi->longitude)
+        @if ($lokasi->jumlah > 1)
             var circle = L.circle([latitude, longitude], {
                 color: 'red',
                 fillColor: '#f03',

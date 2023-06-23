@@ -140,7 +140,7 @@ if (!function_exists('keanggotaanIntensitasDalam')) {
             $intensitas_kecelakaanRule = 'Jarang';
         }
 
-        if ($intensitas_kecelakaan >= 705 ) {
+        if ($intensitas_kecelakaan >= 705) {
             if ($intensitas_kecelakaan >= 705 && $intensitas_kecelakaan < 724) {
                 $intensitas_kecelakaanC = ($intensitas_kecelakaan - 705) / (724 - 705);
             } elseif ($intensitas_kecelakaan >= 724) {
@@ -157,7 +157,6 @@ if (!function_exists('keanggotaanIntensitasDalam')) {
             'intensitas_kecelakaanC' => $intensitas_kecelakaanC,
             'intensitas_kecelakaanRule' => $intensitas_kecelakaanRule
         ];
-        dd($intensitas_kecelakaanA, $intensitas_kecelakaanB, $intensitas_kecelakaaanC);
     }
 }
 
